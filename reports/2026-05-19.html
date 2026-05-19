@@ -193,6 +193,7 @@
     .tag-yellow { background: rgba(255,209,102,0.15); color: #ffd166; border: 1px solid rgba(255,209,102,0.3); }
     .tag-blue   { background: rgba(56,189,248,0.15); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.3); }
     .tag-pink   { background: rgba(236,72,153,0.15); color: #f9a8d4; border: 1px solid rgba(236,72,153,0.3); }
+    .tag-orange { background: rgba(251,146,60,0.15); color: #fb923c; border: 1px solid rgba(251,146,60,0.3); }
 
     .card h3 {
       font-size: 0.97rem;
@@ -313,193 +314,137 @@
 <!-- ════════════════ NAV ════════════════ -->
 <nav>
   <a href="#industry">산업·비즈니스</a>
-  <a href="#models">모델·기술</a>
   <a href="#agents">AI 에이전트</a>
   <a href="#security">보안·위협</a>
-  <a href="#research">학술·연구</a>
+  <a href="#society">사회·정책</a>
+  <a href="#research">학술·분석</a>
   <a href="/">← 모든 리포트</a>
 </nav>
 
 <!-- ════════════════ MAIN ════════════════ -->
 <main>
 
-  <a href="/" class="back-link">
-    ← 전체 리포트 목록으로
-  </a>
+  <a href="/" class="back-link">← 전체 리포트 목록으로</a>
 
   <!-- Summary banner -->
   <div class="summary-banner">
     <div class="summary-item">
       <span class="label">오늘의 키워드</span>
-      <span class="value">AI 에이전트</span>
+      <span class="value">Claude Code</span>
     </div>
     <div class="summary-item">
       <span class="label">주목 기업</span>
-      <span class="value">OpenAI · Google</span>
+      <span class="value">Anthropic · OpenAI</span>
     </div>
     <div class="summary-item">
       <span class="label">핫 토픽</span>
-      <span class="value">엔터프라이즈 AI</span>
-    </div>
-    <div class="summary-item">
-      <span class="label">주목 연구</span>
-      <span class="value">World Models</span>
+      <span class="value">기업 AI 패권 교체</span>
     </div>
     <div class="summary-item">
       <span class="label">경보</span>
-      <span class="value">AI 사이버 공격</span>
+      <span class="value">AI 제로데이 공격</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">주목 지표</span>
+      <span class="value">전 세계 AI 채택 17.8%</span>
     </div>
   </div>
 
-  <!-- ── SECTION 1: 산업·비즈니스 ── -->
+  <!-- ══ SECTION 1: 산업·비즈니스 ══ -->
   <section class="section" id="industry">
     <div class="section-header">
       <div class="source-icon" style="background:linear-gradient(135deg,#6c63ff,#a855f7)">💼</div>
       <div>
         <h2>산업 · 비즈니스</h2>
-        <div class="source-url">TechCrunch · VentureBeat · The Decoder</div>
+        <div class="source-url">TechCrunch · VentureBeat · Axios</div>
       </div>
       <span class="story-count">5 stories</span>
     </div>
     <div class="cards">
 
       <div class="card featured">
-        <div class="card-meta"><span class="tag tag-purple">단독</span></div>
-        <h3>OpenAI, 연간 매출 250억 달러 돌파 — IPO 본격 준비 착수</h3>
-        <p>OpenAI가 연간 반복 매출(ARR) 250억 달러를 돌파하며 2026년 후반 기업공개(IPO)를 향한 초기 절차에 돌입한 것으로 알려졌다. 이는 불과 1년 전 대비 폭발적 성장으로, AI 시장 지배력을 수익으로 전환하는 데 성공했음을 보여준다. 시장에서는 IPO 시 기업 가치가 최소 1,500억 달러에 달할 것으로 전망하고 있다.</p>
+        <div class="card-meta"><span class="tag tag-purple">시장 역전</span></div>
+        <h3>Anthropic, 기업 AI 채택률 사상 첫 OpenAI 추월 — Ramp AI 인덱스 5월 2026</h3>
+        <p>Ramp AI 인덱스 2026년 5월 보고서에 따르면 Anthropic의 기업 채택률이 34.4%로 OpenAI(32.3%)를 사상 처음으로 추월했다. 지난 1년간 Anthropic은 기업 채택률을 4배 이상 높인 반면, OpenAI는 같은 기간 고작 0.3% 증가에 그쳤다. 50,000개 이상 기업의 실제 결제 데이터 기반인 이 지표는 AI 시장의 구조적 세력 교체를 명확히 보여준다.</p>
         <div class="card-footer">
-          <span class="card-source">TechCrunch</span>
-          <a class="btn" href="https://techcrunch.com/category/artificial-intelligence/" target="_blank">
-            기사 보기
-            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>
+          <span class="card-source">TechCrunch · VentureBeat</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/13/anthropic-now-has-more-business-customers-than-openai-according-to-ramp-data/" target="_blank">
+            기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>
           </a>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-meta"><span class="tag tag-green">파트너십</span></div>
-        <h3>노보 노디스크, OpenAI와 전략적 파트너십 체결 — 신약 개발 전 과정에 AI 적용</h3>
-        <p>세계 최대 제약사 중 하나인 덴마크의 노보 노디스크가 OpenAI와 다년간 전략적 파트너십을 체결했다. 신약 발굴부터 임상 시험·제조·공급망·상업 운영에 이르기까지 비즈니스 전 과정에 AI를 통합하며, 2026년 말까지 완전 도입을 목표로 한다. 비만·당뇨 신약 식별 가속화가 주요 목표다.</p>
-        <div class="card-footer">
-          <span class="card-source">VentureBeat</span>
-          <a class="btn" href="https://venturebeat.com/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-yellow">투자</span></div>
-        <h3>Runway, 기업 가치 53억 달러 달성 — Google AI에 정면 도전</h3>
-        <p>AI 영상 제작 스타트업 Runway가 기업 가치 53억 달러를 기록하며, 2026년 2분기에만 ARR 4,000만 달러를 추가했다. 공동창업자는 "단순한 영상 도구가 아니라 Google과 같은 AI 플랫폼 기업이 되겠다"고 선언해 업계의 주목을 받았다. 영화 제작사에서 시작해 이제 통합 AI 창작 생태계를 구축 중이다.</p>
-        <div class="card-footer">
-          <span class="card-source">TechCrunch</span>
-          <a class="btn" href="https://techcrunch.com/2026/05/15/runway-started-by-helping-filmmakers-now-it-wants-to-beat-google-at-ai/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-blue">인프라</span></div>
-        <h3>Meta, AMD와 1,000억 달러 칩 구매 계약 체결 — AI 인프라 다변화 본격화</h3>
-        <p>Meta가 AMD MI540 GPU와 CPU 등을 포함해 최대 1,000억 달러 규모의 다년간 칩 구매 계약을 체결했다. 엔비디아 의존도를 줄이고 AI 인프라를 다변화하려는 전략적 행보로, 업계에서는 AI 칩 시장 경쟁 구도가 재편될 것으로 보고 있다. AMD 주가는 계약 발표 이후 크게 상승했다.</p>
-        <div class="card-footer">
-          <span class="card-source">VentureBeat</span>
-          <a class="btn" href="https://venturebeat.com/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-pink">법률</span></div>
-        <h3>Anthropic, AI 법률 서비스 시장 진출 — 로펌 업무 자동화 도구 공개</h3>
-        <p>Anthropic이 법률 AI 서비스 업계에 뛰어들며 로펌을 위한 특화 도구를 공개했다. 문서 검색·검토, 판례 조사, 증인 신문 준비, 서면 초안 작성 등 법률 사무의 핵심 업무를 자동화하는 기능을 담았다. OpenAI도 같은 주 유사 법률 AI 서비스를 발표하며 두 회사 간 경쟁이 법률 분야로 확전되는 양상이다.</p>
+        <div class="card-meta"><span class="tag tag-pink">법률 AI</span></div>
+        <h3>Anthropic, 법률 AI 시장 진출 — OpenAI와 법률 분야 맞대결</h3>
+        <p>Anthropic이 법률 AI 서비스 시장에 본격 진출해 로펌용 특화 도구를 공개했다. 문서 검색, 판례 조사, 증인 신문 준비, 서면 초안 작성 등 법률 업무의 핵심 기능을 자동화한다. OpenAI도 같은 시기 유사한 법률 AI 서비스를 발표해 AI 거인들의 경쟁 전선이 법률 분야로 확전되는 양상이다.</p>
         <div class="card-footer">
           <span class="card-source">TechCrunch</span>
           <a class="btn" href="https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
 
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-blue">음성 AI</span></div>
+        <h3>OpenAI, 음성 지능 API 출시 — GPT-Realtime-2로 대화·번역·인식 원스톱 제공</h3>
+        <p>OpenAI가 개발자를 위한 새로운 음성 지능 API 기능군을 출시했다. GPT-5급 추론 능력을 탑재한 GPT-Realtime-2 모델 기반으로 대화형 음성 생성, 자동 음성 인식(ASR), 실시간 다국어 번역을 하나의 API에서 지원한다. 복잡한 사용자 요청을 실시간으로 처리하도록 설계돼 음성 기반 AI 앱 개발의 새 지평을 열었다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-green">일자리</span></div>
+        <h3>젠슨 황 엔비디아 CEO "AI는 일자리 파괴자가 아닌 창출 엔진"</h3>
+        <p>엔비디아 CEO 젠슨 황이 AI를 대규모 실업의 전조가 아니라 산업 규모의 일자리 창출기로 규정했다. 2025년 미국 소프트웨어 개발자 고용이 전년 대비 8.5% 증가해 220만 명 사상 최고치를 기록했다는 데이터를 근거로 제시했다. AI 도구 확산이 새로운 직군과 역할을 만들어내고 있다는 주장을 수치로 뒷받침했다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/04/as-workers-worry-about-ai-nvidias-jensen-huang-says-ai-is-creating-an-enormous-number-of-jobs/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-yellow">미디어</span></div>
+        <h3>디그(Digg), AI 뉴스 큐레이터로 화려한 귀환 — 인플루언서 추적으로 핵심 뉴스만 선별</h3>
+        <p>한때 소셜 뉴스의 강자였던 Digg가 AI 뉴스 큐레이션 플랫폼으로 재탄생했다. AI 분야 주요 인플루언서와 미디어를 실시간 추적해 진짜 주목할 만한 뉴스만 랭킹하는 방식으로, 정보 과부하 시대의 새로운 뉴스 소비 모델을 제시했다. AI 분야를 시작으로 단계적으로 다른 영역으로 확장할 계획이다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/11/digg-tries-again-this-time-as-an-ai-news-aggregator/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── SECTION 2: 모델·기술 ── -->
-  <section class="section" id="models">
+  <!-- ══ SECTION 2: AI 에이전트 ══ -->
+  <section class="section" id="agents">
     <div class="section-header">
-      <div class="source-icon" style="background:linear-gradient(135deg,#00d4aa,#0284c7)">🧠</div>
+      <div class="source-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">🤖</div>
       <div>
-        <h2>모델 · 기술 출시</h2>
-        <div class="source-url">LLM Stats · VentureBeat · TechCrunch</div>
+        <h2>AI 에이전트</h2>
+        <div class="source-url">VentureBeat · TechCrunch · Hacker News</div>
       </div>
       <span class="story-count">3 stories</span>
     </div>
     <div class="cards">
 
       <div class="card featured">
-        <div class="card-meta"><span class="tag tag-green">신모델</span></div>
-        <h3>Google, Gemini 3.1 Flash-Lite 출시 — 2.5배 빠른 속도에 $0.25/M 토큰</h3>
-        <p>Google이 Gemini 3.1 Flash-Lite를 공개했다. 이전 버전 대비 2.5배 빠른 응답 속도와 45% 빠른 출력 생성을 자랑하며, 입력 토큰 100만 개당 0.25달러라는 파격적 가격으로 시장에 충격을 줬다. 같은 날 고급 추론 및 에이전트 워크플로에 특화된 오픈소스 모델 Gemma 4도 Apache 2.0 라이선스로 함께 공개됐다.</p>
+        <div class="card-meta"><span class="tag tag-orange">충격 지출</span></div>
+        <h3>우버, 2026년 AI 예산 4개월 만에 전액 소진 — Claude Code의 폭발적 확산</h3>
+        <p>우버 CTO가 2026년 전체 AI 예산을 불과 4개월 만에 소진했다고 공개했다. Claude Code 도입 3개월 만에 엔지니어의 84%가 에이전트 코딩 사용자가 됐고, 현재 전체 커밋 코드의 70%가 AI에서 생성된다. 엔지니어 1인당 월 500~2,000달러의 API 비용이 발생해, AI 도구 예산 관리가 기업의 새로운 경영 과제로 부상하고 있다.</p>
         <div class="card-footer">
-          <span class="card-source">LLM Stats</span>
-          <a class="btn" href="https://llm-stats.com/ai-news" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-blue">기술</span></div>
-        <h3>Google TurboQuant, ICLR 2026 발표 — KV 캐시 메모리 병목 혁신적 해결</h3>
-        <p>Google 연구팀이 ICLR 2026에서 TurboQuant 알고리즘을 공개했다. 대형 언어 모델 실행의 최대 병목 중 하나인 KV 캐시(Key-Value Cache)의 메모리 오버헤드를 대폭 줄이는 기법으로, 대규모 추론 비용 절감에 기여할 것으로 기대된다. 실제 모델 서빙 속도와 처리량이 크게 향상될 전망이다.</p>
-        <div class="card-footer">
-          <span class="card-source">VentureBeat</span>
-          <a class="btn" href="https://venturebeat.com/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-purple">플랫폼</span></div>
-        <h3>Gemini, Chrome 전면 통합 — 웹페이지 실시간 요약·번역·자동 양식 작성</h3>
-        <p>Google이 Gemini를 Chrome 브라우저에 깊이 통합했다. 어떤 웹페이지에서든 맥락 기반 요약, 스마트 자동 양식 작성, 실시간 다국어 번역이 가능해진다. 초기 사용자 테스트에서 리서치 집약적 작업의 완료 시간이 25% 단축된 것으로 나타나며, AI가 브라우저 경험을 근본적으로 바꾸는 시대가 열렸다.</p>
-        <div class="card-footer">
-          <span class="card-source">Tech Insight</span>
-          <a class="btn" href="https://techdg.in/latest-ai-updates-may-2026-global-ai-news-trends/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── SECTION 3: AI 에이전트 ── -->
-  <section class="section" id="agents">
-    <div class="section-header">
-      <div class="source-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">🤖</div>
-      <div>
-        <h2>AI 에이전트</h2>
-        <div class="source-url">VentureBeat · TechCrunch · The Decoder</div>
-      </div>
-      <span class="story-count">4 stories</span>
-    </div>
-    <div class="cards">
-
-      <div class="card featured">
-        <div class="card-meta"><span class="tag tag-yellow">엔터프라이즈</span></div>
-        <h3>OpenAI, 기업용 'Workspace Agents' 공개 — Slack·Salesforce와 직접 연동</h3>
-        <p>OpenAI가 커스텀 GPT의 후속작인 Workspace Agents를 공개했다. 클라우드에서 장기 실행 워크플로를 처리하며 Slack, Salesforce 등 주요 기업 도구와 직접 연동된다. 정기 스케줄로 실행되는 반복 보고 에이전트는 데이터를 수집·분석·요약해 팀과 자동 공유하는 기능을 제공, 수동 업무를 획기적으로 줄여준다.</p>
-        <div class="card-footer">
-          <span class="card-source">VentureBeat</span>
-          <a class="btn" href="https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-blue">경쟁</span></div>
-        <h3>Google 'Remy' vs Meta 'Hatch' — 개인 AI 에이전트 경쟁 본격화</h3>
-        <p>Google이 Gemini 앱 내에서 작동하는 '24/7 개인 에이전트' 코드명 Remy를 테스트 중이며, Meta는 개인 에이전트 Hatch와 Instagram 쇼핑 에이전트를 개발하고 있다. Anthropic·OpenAI가 기업 AI 시장에서 앞서나가는 가운데, Google과 Meta는 소비자용 개인 에이전트 시장 선점을 위해 맞대결을 펼치고 있다.</p>
-        <div class="card-footer">
-          <span class="card-source">The Decoder</span>
-          <a class="btn" href="https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+          <span class="card-source">Hacker News · VentureBeat</span>
+          <a class="btn" href="https://news.ycombinator.com/item?id=47976415" target="_blank">
+            기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>
+          </a>
         </div>
       </div>
 
       <div class="card">
         <div class="card-meta"><span class="tag tag-green">생산성</span></div>
-        <h3>Notion, AI 에이전트 허브로 워크스페이스 전환 — 외부 데이터·코드 통합</h3>
-        <p>Notion이 새 개발자 플랫폼을 통해 AI 에이전트, 외부 데이터 소스, 커스텀 코드를 워크스페이스에 직접 연결할 수 있게 했다. 단순 협업 도구에서 에이전트형 생산성 소프트웨어로의 전환을 가속화하는 행보로, 기업 내 반복 업무를 자동화하는 허브 역할을 겨냥했다. Microsoft 365 Copilot과의 경쟁이 심화될 전망이다.</p>
+        <h3>Notion, 워크스페이스를 AI 에이전트 허브로 전환 — 외부 시스템·데이터 통합</h3>
+        <p>Notion이 새 개발자 플랫폼을 출시해 워크스페이스를 AI 에이전트의 중심 허브로 탈바꿈시켰다. 커스텀 AI 에이전트를 외부 에이전트와 연결하고, 어떤 데이터베이스에서든 데이터를 끌어오는 다단계 자동화 워크플로를 구현할 수 있다. 지난 2월 커스텀 에이전트 출시 이후 Notion 고객들이 이미 100만 개 이상의 에이전트를 제작했다.</p>
         <div class="card-footer">
           <span class="card-source">TechCrunch</span>
           <a class="btn" href="https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
@@ -507,44 +452,46 @@
       </div>
 
       <div class="card">
-        <div class="card-meta"><span class="tag tag-purple">엔터프라이즈</span></div>
-        <h3>Perplexity, 엔터프라이즈용 'Computer' AI 에이전트 출시 — MS·Salesforce 직접 겨냥</h3>
-        <p>Perplexity가 멀티모델 AI 에이전트 'Computer'를 기업 고객에게 공개했다. Microsoft Copilot과 Salesforce 아인슈타인을 정면으로 겨냥한 행보로, 여러 모델을 조합해 복잡한 업무를 자율 처리한다. 엔터프라이즈 AI 에이전트 시장이 2026년 들어 주요 격전지로 부상하고 있음을 보여준다.</p>
+        <div class="card-meta"><span class="tag tag-purple">오케스트레이션</span></div>
+        <h3>Anthropic, 기업 AI '제어 계층' 시장 첫 진입 — OpenAI·Microsoft와 오케스트레이션 전쟁</h3>
+        <p>Anthropic이 AI 모델 경쟁을 넘어 기업용 에이전트 오케스트레이션(제어 계층) 플랫폼 시장에 처음으로 발판을 마련했다. Microsoft Copilot Studio/Azure AI Studio(38.6%)와 OpenAI Assistants(25.7%)가 장악한 시장에서 Anthropic이 첫 측정치 5.7%를 기록했다. AI 모델이 아닌 에이전트 운영 레이어 주도권 싸움이 2026년 기업 AI 경쟁의 핵심 전장이 되고 있다.</p>
         <div class="card-footer">
           <span class="card-source">VentureBeat</span>
-          <a class="btn" href="https://venturebeat.com/technology/perplexity-takes-its-computer-ai-agent-into-the-enterprise-taking-aim-at" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+          <a class="btn" href="https://venturebeat.com/orchestration/claudes-next-enterprise-battle-is-not-models-its-the-agent-control-plane" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── SECTION 4: 보안·위협 ── -->
+  <!-- ══ SECTION 3: 보안·위협 ══ -->
   <section class="section" id="security">
     <div class="section-header">
       <div class="source-icon" style="background:linear-gradient(135deg,#ef4444,#7c3aed)">🔐</div>
       <div>
         <h2>보안 · 위협</h2>
-        <div class="source-url">The Hacker News · Hacker News</div>
+        <div class="source-url">The Hacker News · Mandiant</div>
       </div>
       <span class="story-count">2 stories</span>
     </div>
     <div class="cards">
 
       <div class="card featured">
-        <div class="card-meta"><span class="tag tag-red">경보</span></div>
-        <h3>세계 최초 AI 개발 제로데이 익스플로잇 실전 사용 — 2FA 우회 공격 발생</h3>
-        <p>Google이 AI 시스템을 이용해 개발된 제로데이 익스플로잇이 실제 공격에 사용된 첫 사례를 공개했다. 해커는 오픈소스 웹 관리 도구의 2단계 인증(2FA)을 우회하는 Python 스크립트를 AI로 제작해 공격에 활용했다. 이는 AI가 사이버 공격 도구 개발에 본격 동원되는 새로운 위협 시대의 개막을 알리는 역사적 사건이다.</p>
+        <div class="card-meta"><span class="tag tag-red">경보 — 세계 최초</span></div>
+        <h3>세계 최초 AI 개발 제로데이 익스플로잇 실전 사용 확인 — 2FA 우회 공격</h3>
+        <p>Google이 AI 시스템을 이용해 개발된 제로데이 익스플로잇이 실제 공격에 처음으로 사용된 사례를 공개했다. 해커는 AI로 제작한 Python 스크립트를 통해 오픈소스 웹 관리 도구의 2단계 인증(2FA)을 우회했으며, 코드 전반에서 LLM 생성 코드의 전형적 특징이 발견됐다. AI가 사이버 공격 무기 제작에 본격 동원되는 새로운 위협 시대의 시작을 알리는 역사적 사건이다.</p>
         <div class="card-footer">
           <span class="card-source">The Hacker News</span>
-          <a class="btn" href="https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+          <a class="btn" href="https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html" target="_blank">
+            기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>
+          </a>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-meta"><span class="tag tag-yellow">방어</span></div>
-        <h3>Microsoft, AI 멀티에이전트 취약점 탐지 시스템 'MDASH' 공개</h3>
-        <p>Microsoft가 AI 기반 다중 에이전트 취약점 탐지·수정 시스템 MDASH(Multi-agent Defect and Security Hunting)를 공개했다. 모델에 구애받지 않는 아키텍처로, 취약점 클래스별 맞춤형 AI 에이전트가 자율적으로 결함을 발견·검증·증명한다. 사이버 공격에 AI가 악용되는 추세에 맞서 방어 쪽에서도 AI를 전면 배치하는 방향으로 전환되고 있다.</p>
+        <div class="card-meta"><span class="tag tag-yellow">사이버 위협</span></div>
+        <h3>2026년, AI 지원 사이버 공격의 원년 — 한 달간 17개 조직 협박한 단독 행위자</h3>
+        <p>Claude Code 등 AI 코딩 도구를 활용한 단독 위협 행위자가 한 달 만에 17개 조직을 대상으로 협박 캠페인을 벌인 사례가 공개됐다. Mandiant M-Trends 2026 보고서에 따르면, 취약점 익스플로잇 시간이 사실상 '음수'로 전환돼 CVE 공개 24시간 내 28.3%가 악용되는 것으로 나타났다. AI가 사이버 공격의 속도와 정교함을 획기적으로 높이고 있다.</p>
         <div class="card-footer">
           <span class="card-source">The Hacker News</span>
           <a class="btn" href="https://thehackernews.com/2026/05/2026-year-of-ai-assisted-attacks.html" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
@@ -554,45 +501,82 @@
     </div>
   </section>
 
-  <!-- ── SECTION 5: 학술·연구 ── -->
-  <section class="section" id="research">
+  <!-- ══ SECTION 4: 사회·정책 ══ -->
+  <section class="section" id="society">
     <div class="section-header">
-      <div class="source-icon" style="background:linear-gradient(135deg,#0284c7,#0d9488)">🔬</div>
+      <div class="source-icon" style="background:linear-gradient(135deg,#0284c7,#7c3aed)">🌐</div>
       <div>
-        <h2>학술 · 연구</h2>
-        <div class="source-url">ArXiv · Nature · MIT Technology Review</div>
+        <h2>사회 · 정책</h2>
+        <div class="source-url">Microsoft · MIT Technology Review</div>
       </div>
       <span class="story-count">3 stories</span>
     </div>
     <div class="cards">
 
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-blue">글로벌 확산</span></div>
+        <h3>전 세계 AI 채택률 17.8% 돌파 — UAE 70.1%로 세계 최고, 확산 속도 역대 최빠름</h3>
+        <p>Microsoft 2026년 1분기 보고서에 따르면 전 세계 AI 사용률이 16.3%에서 17.8%로 상승했다. UAE가 70.1%로 글로벌 AI 보급률 1위를 기록했으며, 미국 소프트웨어 개발자 고용은 2026년 1분기에도 전년 동기 대비 4% 증가했다. AI의 글로벌 확산 속도가 PC나 인터넷 보급 속도를 크게 웃도는 것으로 분석됐다.</p>
+        <div class="card-footer">
+          <span class="card-source">Microsoft</span>
+          <a class="btn" href="https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-purple">민주주의</span></div>
+        <h3>MIT 테크 리뷰 "AI가 민주주의를 위협한다" — 청사진 보고서 공개</h3>
+        <p>MIT 테크놀로지 리뷰가 AI가 사람들의 정보 접근과 민주적 의사결정 참여의 핵심 인터페이스로 부상하고 있다고 경고했다. 방치할 경우 이미 취약한 민주주의 제도가 더욱 흔들릴 수 있다는 분석과 함께, AI 기업·정부·시민사회의 협력을 통한 구체적 대응책을 담은 청사진을 제시했다. AI 거버넌스가 기술 문제를 넘어 민주주의 문제로 격상되고 있다.</p>
+        <div class="card-footer">
+          <span class="card-source">MIT Technology Review</span>
+          <a class="btn" href="https://www.technologyreview.com/2026/05/05/1136843/ai-democracy-blueprint/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-red">군사 AI</span></div>
+        <h3>군용 AI 챗봇, 전쟁 지휘실 진입 — 타격 목표 선정까지 AI가 조언</h3>
+        <p>대화형 AI 도구가 군사 지휘 체계에 실제로 도입돼 지휘관들이 분석뿐 아니라 행동 조언에도 AI를 활용하기 시작했다고 MIT 테크놀로지 리뷰가 보도했다. 일부 경우 어떤 표적을 먼저 공격할지 결정하는 과정에서도 AI 시스템이 관여하는 것으로 전해졌다. 군사 영역 AI 도입의 윤리·안전 문제가 새로운 국제사회의 핵심 과제로 부상하고 있다.</p>
+        <div class="card-footer">
+          <span class="card-source">MIT Technology Review</span>
+          <a class="btn" href="https://www.technologyreview.com/2026/05/06/1136917/the-download-seafloor-science-military-ai-chatbots/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ SECTION 5: 학술·분석 ══ -->
+  <section class="section" id="research">
+    <div class="section-header">
+      <div class="source-icon" style="background:linear-gradient(135deg,#0284c7,#0d9488)">🔬</div>
+      <div>
+        <h2>학술 · 분석</h2>
+        <div class="source-url">MIT Technology Review · ArXiv</div>
+      </div>
+      <span class="story-count">2 stories</span>
+    </div>
+    <div class="cards">
+
       <div class="card featured">
-        <div class="card-meta"><span class="tag tag-blue">연구</span></div>
-        <h3>'월드 모델(World Models)', 2026년 AI 차세대 혁신 키워드 부상 — 얀 르쿤 스핀오프 주목</h3>
-        <p>2026년은 AI 월드 모델의 획기적 발전의 해로 불리고 있다. 물리 환경의 인과 역학을 학습해 예측·행동하는 월드 모델은 로보틱스와 에이전트 AI의 핵심 기술로 부상했다. Meta를 떠난 얀 르쿤이 월드 모델 전문 스타트업을 설립했고, DeepMind의 Genie와 스타트업 World Labs의 상용 모델 Marble이 실시간 인터랙티브 환경 생성을 시연하며 업계의 이목을 집중시키고 있다.</p>
+        <div class="card-meta"><span class="tag tag-green">전문가 분석</span></div>
+        <h3>MIT 전문가 패널 "2026년 AI 핵심 신호" 발표 — Anthropic 성능 1위, 에이전트 팀 부상</h3>
+        <p>MIT 테크놀로지 리뷰 전문가 패널(5월 18일)이 2026년 AI 분야에서 주목해야 할 핵심 트렌드를 분석했다. 2026년 3월 기준 Anthropic이 AI 모델 성능 랭킹 1위를 차지하고 xAI·Google·OpenAI가 뒤를 잇는다. 단일 에이전트에서 에이전트 팀(multi-agent cooperation)으로 진화해 훨씬 복잡한 목표를 달성하는 것이 2026년의 결정적 전환점으로 꼽혔다.</p>
         <div class="card-footer">
-          <span class="card-source">Nature / NextBigFuture</span>
-          <a class="btn" href="https://www.nature.com/articles/d41586-026-00820-5" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+          <span class="card-source">MIT Technology Review</span>
+          <a class="btn" href="https://www.technologyreview.com/2026/05/18/1137430/the-signals-that-matter-mit-insiders-panel" target="_blank">
+            기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>
+          </a>
         </div>
       </div>
 
       <div class="card">
-        <div class="card-meta"><span class="tag tag-green">ICML 2026</span></div>
-        <h3>ArXiv ICML 2026 스포트라이트: "추론 모델은 단순히 더 오래 생각하지 않는다"</h3>
-        <p>ICML 2026 스포트라이트 논문 "Reasoning Models Don't Just Think Longer, They Move Differently"가 주목받고 있다. 추론 특화 모델이 단순히 더 많은 연산을 소비하는 것이 아니라, 일반 모델과는 질적으로 다른 방식으로 표현 공간을 이동하며 문제를 해결한다는 것을 실증했다. AI 해석 가능성(interpretability) 연구에 새로운 방향을 제시한다.</p>
+        <div class="card-meta"><span class="tag tag-yellow">경제 분석</span></div>
+        <h3>노벨 경제학상 수상자 "AI에서 주목해야 할 세 가지" — 불평등 심화·정책 공백 경고</h3>
+        <p>노벨 경제학상 수상 경제학자가 MIT 테크놀로지 리뷰에 AI의 핵심 경제적 과제 세 가지를 제시했다. AI가 역사상 어떤 기술보다 빠르게 수익화되고 있으며, 편익이 기업과 자본에 집중돼 소득 불평등을 심화시킬 것이라고 경고했다. AI의 경제적 충격에 선제적으로 대응하는 제도적 장치 마련이 시급하다는 주장이다.</p>
         <div class="card-footer">
-          <span class="card-source">ArXiv / cs.LG</span>
-          <a class="btn" href="https://arxiv.org/list/cs.LG/recent" target="_blank">논문 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-meta"><span class="tag tag-purple">임상 AI</span></div>
-        <h3>ArXiv 신논문: ClinicBot — 임상 가이드라인 기반 의료 챗봇 아키텍처 제안</h3>
-        <p>ArXiv cs.AI 섹션에 'ClinicBot'이 공개됐다. 기존 LLM의 환각(hallucination) 문제를 해결하기 위해 최신 임상 가이드라인을 실시간으로 참조하는 RAG(검색 증강 생성) 아키텍처를 채택했다. 의사와 환자 모두를 위한 신뢰 가능한 의료 정보 제공을 목표로 하며, 실제 임상 환경 도입을 위한 평가 프레임워크도 함께 제안됐다.</p>
-        <div class="card-footer">
-          <span class="card-source">ArXiv / cs.AI</span>
-          <a class="btn" href="https://arxiv.org/list/cs.AI/current" target="_blank">논문 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+          <span class="card-source">MIT Technology Review</span>
+          <a class="btn" href="https://www.technologyreview.com/2026/05/11/1137090/three-things-in-ai-to-watch-according-to-a-nobel-winning-economist/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
         </div>
       </div>
 
