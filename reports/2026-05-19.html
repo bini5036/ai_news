@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 5월 19일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffd166;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 20px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; }
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    header h1 span { color: var(--accent); }
+    .date-line {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: var(--accent2); }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    nav a:hover { color: var(--text); border-bottom-color: var(--accent); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 56px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .section-header .source-url {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .story-count {
+      margin-left: auto;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow);
+      border-color: rgba(108,99,255,0.4);
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tag {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag-purple { background: rgba(108,99,255,0.2); color: #a89fff; border: 1px solid rgba(108,99,255,0.3); }
+    .tag-green  { background: rgba(0,212,170,0.15); color: #00d4aa; border: 1px solid rgba(0,212,170,0.3); }
+    .tag-red    { background: rgba(255,107,107,0.15); color: #ff9090; border: 1px solid rgba(255,107,107,0.3); }
+    .tag-yellow { background: rgba(255,209,102,0.15); color: #ffd166; border: 1px solid rgba(255,209,102,0.3); }
+    .tag-blue   { background: rgba(56,189,248,0.15); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.3); }
+    .tag-pink   { background: rgba(236,72,153,0.15); color: #f9a8d4; border: 1px solid rgba(236,72,153,0.3); }
+
+    .card h3 {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .card p {
+      font-size: 0.875rem;
+      color: #b0b5cc;
+      line-height: 1.7;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+    .card-source {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn svg { width: 12px; height: 12px; }
+
+    /* ── Highlight card ── */
+    .card.featured {
+      border-color: rgba(108,99,255,0.45);
+      background: linear-gradient(135deg, #1a1d27 0%, #1e1a35 100%);
+    }
+    .card.featured::before {
+      content: '★ FEATURED';
+      display: block;
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: -4px;
+    }
+
+    /* ── Summary banner ── */
+    .summary-banner {
+      background: linear-gradient(135deg, var(--surface2) 0%, #1e1a35 100%);
+      border: 1px solid rgba(108,99,255,0.3);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 24px;
+    }
+    .summary-item { display: flex; flex-direction: column; gap: 4px; }
+    .summary-item .label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .summary-item .value { font-size: 1.1rem; font-weight: 600; color: var(--text); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      margin-bottom: 32px;
+      padding: 8px 0;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--text); }
+
+    @media (max-width: 600px) {
+      header { padding: 32px 16px 24px; }
+      main { padding: 24px 16px 60px; }
+      .summary-banner { padding: 20px; }
+      .header-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header>
+  <div class="header-badge">AI Daily Digest · Powered by Claude</div>
+  <h1>오늘의 <span>AI 뉴스</span> 리포트</h1>
+  <p class="date-line">2026년 5월 19일 화요일 &nbsp;·&nbsp; Today's Artificial Intelligence Headlines</p>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-num">15</div><div class="stat-label">주요 기사</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">출처</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">카테고리</div></div>
+  </div>
+</header>
+
+<!-- ════════════════ NAV ════════════════ -->
+<nav>
+  <a href="#industry">산업·비즈니스</a>
+  <a href="#models">모델·기술</a>
+  <a href="#agents">AI 에이전트</a>
+  <a href="#security">보안·위협</a>
+  <a href="#research">학술·연구</a>
+  <a href="/">← 모든 리포트</a>
+</nav>
+
+<!-- ════════════════ MAIN ════════════════ -->
+<main>
+
+  <a href="/" class="back-link">
+    ← 전체 리포트 목록으로
+  </a>
+
+  <!-- Summary banner -->
+  <div class="summary-banner">
+    <div class="summary-item">
+      <span class="label">오늘의 키워드</span>
+      <span class="value">AI 에이전트</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">주목 기업</span>
+      <span class="value">OpenAI · Google</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">핫 토픽</span>
+      <span class="value">엔터프라이즈 AI</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">주목 연구</span>
+      <span class="value">World Models</span>
+    </div>
+    <div class="summary-item">
+      <span class="label">경보</span>
+      <span class="value">AI 사이버 공격</span>
+    </div>
+  </div>
+
+  <!-- ── SECTION 1: 산업·비즈니스 ── -->
+  <section class="section" id="industry">
+    <div class="section-header">
+      <div class="source-icon" style="background:linear-gradient(135deg,#6c63ff,#a855f7)">💼</div>
+      <div>
+        <h2>산업 · 비즈니스</h2>
+        <div class="source-url">TechCrunch · VentureBeat · The Decoder</div>
+      </div>
+      <span class="story-count">5 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card featured">
+        <div class="card-meta"><span class="tag tag-purple">단독</span></div>
+        <h3>OpenAI, 연간 매출 250억 달러 돌파 — IPO 본격 준비 착수</h3>
+        <p>OpenAI가 연간 반복 매출(ARR) 250억 달러를 돌파하며 2026년 후반 기업공개(IPO)를 향한 초기 절차에 돌입한 것으로 알려졌다. 이는 불과 1년 전 대비 폭발적 성장으로, AI 시장 지배력을 수익으로 전환하는 데 성공했음을 보여준다. 시장에서는 IPO 시 기업 가치가 최소 1,500억 달러에 달할 것으로 전망하고 있다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/category/artificial-intelligence/" target="_blank">
+            기사 보기
+            <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-green">파트너십</span></div>
+        <h3>노보 노디스크, OpenAI와 전략적 파트너십 체결 — 신약 개발 전 과정에 AI 적용</h3>
+        <p>세계 최대 제약사 중 하나인 덴마크의 노보 노디스크가 OpenAI와 다년간 전략적 파트너십을 체결했다. 신약 발굴부터 임상 시험·제조·공급망·상업 운영에 이르기까지 비즈니스 전 과정에 AI를 통합하며, 2026년 말까지 완전 도입을 목표로 한다. 비만·당뇨 신약 식별 가속화가 주요 목표다.</p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat</span>
+          <a class="btn" href="https://venturebeat.com/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-yellow">투자</span></div>
+        <h3>Runway, 기업 가치 53억 달러 달성 — Google AI에 정면 도전</h3>
+        <p>AI 영상 제작 스타트업 Runway가 기업 가치 53억 달러를 기록하며, 2026년 2분기에만 ARR 4,000만 달러를 추가했다. 공동창업자는 "단순한 영상 도구가 아니라 Google과 같은 AI 플랫폼 기업이 되겠다"고 선언해 업계의 주목을 받았다. 영화 제작사에서 시작해 이제 통합 AI 창작 생태계를 구축 중이다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/15/runway-started-by-helping-filmmakers-now-it-wants-to-beat-google-at-ai/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-blue">인프라</span></div>
+        <h3>Meta, AMD와 1,000억 달러 칩 구매 계약 체결 — AI 인프라 다변화 본격화</h3>
+        <p>Meta가 AMD MI540 GPU와 CPU 등을 포함해 최대 1,000억 달러 규모의 다년간 칩 구매 계약을 체결했다. 엔비디아 의존도를 줄이고 AI 인프라를 다변화하려는 전략적 행보로, 업계에서는 AI 칩 시장 경쟁 구도가 재편될 것으로 보고 있다. AMD 주가는 계약 발표 이후 크게 상승했다.</p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat</span>
+          <a class="btn" href="https://venturebeat.com/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-pink">법률</span></div>
+        <h3>Anthropic, AI 법률 서비스 시장 진출 — 로펌 업무 자동화 도구 공개</h3>
+        <p>Anthropic이 법률 AI 서비스 업계에 뛰어들며 로펌을 위한 특화 도구를 공개했다. 문서 검색·검토, 판례 조사, 증인 신문 준비, 서면 초안 작성 등 법률 사무의 핵심 업무를 자동화하는 기능을 담았다. OpenAI도 같은 주 유사 법률 AI 서비스를 발표하며 두 회사 간 경쟁이 법률 분야로 확전되는 양상이다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/12/the-ai-legal-services-industry-is-heating-up-anthropic-is-getting-in-on-the-action/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: 모델·기술 ── -->
+  <section class="section" id="models">
+    <div class="section-header">
+      <div class="source-icon" style="background:linear-gradient(135deg,#00d4aa,#0284c7)">🧠</div>
+      <div>
+        <h2>모델 · 기술 출시</h2>
+        <div class="source-url">LLM Stats · VentureBeat · TechCrunch</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card featured">
+        <div class="card-meta"><span class="tag tag-green">신모델</span></div>
+        <h3>Google, Gemini 3.1 Flash-Lite 출시 — 2.5배 빠른 속도에 $0.25/M 토큰</h3>
+        <p>Google이 Gemini 3.1 Flash-Lite를 공개했다. 이전 버전 대비 2.5배 빠른 응답 속도와 45% 빠른 출력 생성을 자랑하며, 입력 토큰 100만 개당 0.25달러라는 파격적 가격으로 시장에 충격을 줬다. 같은 날 고급 추론 및 에이전트 워크플로에 특화된 오픈소스 모델 Gemma 4도 Apache 2.0 라이선스로 함께 공개됐다.</p>
+        <div class="card-footer">
+          <span class="card-source">LLM Stats</span>
+          <a class="btn" href="https://llm-stats.com/ai-news" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-blue">기술</span></div>
+        <h3>Google TurboQuant, ICLR 2026 발표 — KV 캐시 메모리 병목 혁신적 해결</h3>
+        <p>Google 연구팀이 ICLR 2026에서 TurboQuant 알고리즘을 공개했다. 대형 언어 모델 실행의 최대 병목 중 하나인 KV 캐시(Key-Value Cache)의 메모리 오버헤드를 대폭 줄이는 기법으로, 대규모 추론 비용 절감에 기여할 것으로 기대된다. 실제 모델 서빙 속도와 처리량이 크게 향상될 전망이다.</p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat</span>
+          <a class="btn" href="https://venturebeat.com/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-purple">플랫폼</span></div>
+        <h3>Gemini, Chrome 전면 통합 — 웹페이지 실시간 요약·번역·자동 양식 작성</h3>
+        <p>Google이 Gemini를 Chrome 브라우저에 깊이 통합했다. 어떤 웹페이지에서든 맥락 기반 요약, 스마트 자동 양식 작성, 실시간 다국어 번역이 가능해진다. 초기 사용자 테스트에서 리서치 집약적 작업의 완료 시간이 25% 단축된 것으로 나타나며, AI가 브라우저 경험을 근본적으로 바꾸는 시대가 열렸다.</p>
+        <div class="card-footer">
+          <span class="card-source">Tech Insight</span>
+          <a class="btn" href="https://techdg.in/latest-ai-updates-may-2026-global-ai-news-trends/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: AI 에이전트 ── -->
+  <section class="section" id="agents">
+    <div class="section-header">
+      <div class="source-icon" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">🤖</div>
+      <div>
+        <h2>AI 에이전트</h2>
+        <div class="source-url">VentureBeat · TechCrunch · The Decoder</div>
+      </div>
+      <span class="story-count">4 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card featured">
+        <div class="card-meta"><span class="tag tag-yellow">엔터프라이즈</span></div>
+        <h3>OpenAI, 기업용 'Workspace Agents' 공개 — Slack·Salesforce와 직접 연동</h3>
+        <p>OpenAI가 커스텀 GPT의 후속작인 Workspace Agents를 공개했다. 클라우드에서 장기 실행 워크플로를 처리하며 Slack, Salesforce 등 주요 기업 도구와 직접 연동된다. 정기 스케줄로 실행되는 반복 보고 에이전트는 데이터를 수집·분석·요약해 팀과 자동 공유하는 기능을 제공, 수동 업무를 획기적으로 줄여준다.</p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat</span>
+          <a class="btn" href="https://venturebeat.com/orchestration/openai-unveils-workspace-agents-a-successor-to-custom-gpts-for-enterprises-that-can-plug-directly-into-slack-salesforce-and-more" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-blue">경쟁</span></div>
+        <h3>Google 'Remy' vs Meta 'Hatch' — 개인 AI 에이전트 경쟁 본격화</h3>
+        <p>Google이 Gemini 앱 내에서 작동하는 '24/7 개인 에이전트' 코드명 Remy를 테스트 중이며, Meta는 개인 에이전트 Hatch와 Instagram 쇼핑 에이전트를 개발하고 있다. Anthropic·OpenAI가 기업 AI 시장에서 앞서나가는 가운데, Google과 Meta는 소비자용 개인 에이전트 시장 선점을 위해 맞대결을 펼치고 있다.</p>
+        <div class="card-footer">
+          <span class="card-source">The Decoder</span>
+          <a class="btn" href="https://the-decoder.com/google-and-meta-race-to-build-personal-ai-agents-as-anthropic-and-openai-pull-further-ahead/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-green">생산성</span></div>
+        <h3>Notion, AI 에이전트 허브로 워크스페이스 전환 — 외부 데이터·코드 통합</h3>
+        <p>Notion이 새 개발자 플랫폼을 통해 AI 에이전트, 외부 데이터 소스, 커스텀 코드를 워크스페이스에 직접 연결할 수 있게 했다. 단순 협업 도구에서 에이전트형 생산성 소프트웨어로의 전환을 가속화하는 행보로, 기업 내 반복 업무를 자동화하는 허브 역할을 겨냥했다. Microsoft 365 Copilot과의 경쟁이 심화될 전망이다.</p>
+        <div class="card-footer">
+          <span class="card-source">TechCrunch</span>
+          <a class="btn" href="https://techcrunch.com/2026/05/13/notion-just-turned-its-workspace-into-a-hub-for-ai-agents/" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-purple">엔터프라이즈</span></div>
+        <h3>Perplexity, 엔터프라이즈용 'Computer' AI 에이전트 출시 — MS·Salesforce 직접 겨냥</h3>
+        <p>Perplexity가 멀티모델 AI 에이전트 'Computer'를 기업 고객에게 공개했다. Microsoft Copilot과 Salesforce 아인슈타인을 정면으로 겨냥한 행보로, 여러 모델을 조합해 복잡한 업무를 자율 처리한다. 엔터프라이즈 AI 에이전트 시장이 2026년 들어 주요 격전지로 부상하고 있음을 보여준다.</p>
+        <div class="card-footer">
+          <span class="card-source">VentureBeat</span>
+          <a class="btn" href="https://venturebeat.com/technology/perplexity-takes-its-computer-ai-agent-into-the-enterprise-taking-aim-at" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: 보안·위협 ── -->
+  <section class="section" id="security">
+    <div class="section-header">
+      <div class="source-icon" style="background:linear-gradient(135deg,#ef4444,#7c3aed)">🔐</div>
+      <div>
+        <h2>보안 · 위협</h2>
+        <div class="source-url">The Hacker News · Hacker News</div>
+      </div>
+      <span class="story-count">2 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card featured">
+        <div class="card-meta"><span class="tag tag-red">경보</span></div>
+        <h3>세계 최초 AI 개발 제로데이 익스플로잇 실전 사용 — 2FA 우회 공격 발생</h3>
+        <p>Google이 AI 시스템을 이용해 개발된 제로데이 익스플로잇이 실제 공격에 사용된 첫 사례를 공개했다. 해커는 오픈소스 웹 관리 도구의 2단계 인증(2FA)을 우회하는 Python 스크립트를 AI로 제작해 공격에 활용했다. 이는 AI가 사이버 공격 도구 개발에 본격 동원되는 새로운 위협 시대의 개막을 알리는 역사적 사건이다.</p>
+        <div class="card-footer">
+          <span class="card-source">The Hacker News</span>
+          <a class="btn" href="https://thehackernews.com/2026/05/hackers-used-ai-to-develop-first-known.html" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-yellow">방어</span></div>
+        <h3>Microsoft, AI 멀티에이전트 취약점 탐지 시스템 'MDASH' 공개</h3>
+        <p>Microsoft가 AI 기반 다중 에이전트 취약점 탐지·수정 시스템 MDASH(Multi-agent Defect and Security Hunting)를 공개했다. 모델에 구애받지 않는 아키텍처로, 취약점 클래스별 맞춤형 AI 에이전트가 자율적으로 결함을 발견·검증·증명한다. 사이버 공격에 AI가 악용되는 추세에 맞서 방어 쪽에서도 AI를 전면 배치하는 방향으로 전환되고 있다.</p>
+        <div class="card-footer">
+          <span class="card-source">The Hacker News</span>
+          <a class="btn" href="https://thehackernews.com/2026/05/2026-year-of-ai-assisted-attacks.html" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: 학술·연구 ── -->
+  <section class="section" id="research">
+    <div class="section-header">
+      <div class="source-icon" style="background:linear-gradient(135deg,#0284c7,#0d9488)">🔬</div>
+      <div>
+        <h2>학술 · 연구</h2>
+        <div class="source-url">ArXiv · Nature · MIT Technology Review</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card featured">
+        <div class="card-meta"><span class="tag tag-blue">연구</span></div>
+        <h3>'월드 모델(World Models)', 2026년 AI 차세대 혁신 키워드 부상 — 얀 르쿤 스핀오프 주목</h3>
+        <p>2026년은 AI 월드 모델의 획기적 발전의 해로 불리고 있다. 물리 환경의 인과 역학을 학습해 예측·행동하는 월드 모델은 로보틱스와 에이전트 AI의 핵심 기술로 부상했다. Meta를 떠난 얀 르쿤이 월드 모델 전문 스타트업을 설립했고, DeepMind의 Genie와 스타트업 World Labs의 상용 모델 Marble이 실시간 인터랙티브 환경 생성을 시연하며 업계의 이목을 집중시키고 있다.</p>
+        <div class="card-footer">
+          <span class="card-source">Nature / NextBigFuture</span>
+          <a class="btn" href="https://www.nature.com/articles/d41586-026-00820-5" target="_blank">기사 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-green">ICML 2026</span></div>
+        <h3>ArXiv ICML 2026 스포트라이트: "추론 모델은 단순히 더 오래 생각하지 않는다"</h3>
+        <p>ICML 2026 스포트라이트 논문 "Reasoning Models Don't Just Think Longer, They Move Differently"가 주목받고 있다. 추론 특화 모델이 단순히 더 많은 연산을 소비하는 것이 아니라, 일반 모델과는 질적으로 다른 방식으로 표현 공간을 이동하며 문제를 해결한다는 것을 실증했다. AI 해석 가능성(interpretability) 연구에 새로운 방향을 제시한다.</p>
+        <div class="card-footer">
+          <span class="card-source">ArXiv / cs.LG</span>
+          <a class="btn" href="https://arxiv.org/list/cs.LG/recent" target="_blank">논문 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-meta"><span class="tag tag-purple">임상 AI</span></div>
+        <h3>ArXiv 신논문: ClinicBot — 임상 가이드라인 기반 의료 챗봇 아키텍처 제안</h3>
+        <p>ArXiv cs.AI 섹션에 'ClinicBot'이 공개됐다. 기존 LLM의 환각(hallucination) 문제를 해결하기 위해 최신 임상 가이드라인을 실시간으로 참조하는 RAG(검색 증강 생성) 아키텍처를 채택했다. 의사와 환자 모두를 위한 신뢰 가능한 의료 정보 제공을 목표로 하며, 실제 임상 환경 도입을 위한 평가 프레임워크도 함께 제안됐다.</p>
+        <div class="card-footer">
+          <span class="card-source">ArXiv / cs.AI</span>
+          <a class="btn" href="https://arxiv.org/list/cs.AI/current" target="_blank">논문 보기 <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10L10 2M5 2h5v5"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer>
+  <p>AI Daily Reporter · 자동 생성된 뉴스 요약 &nbsp;·&nbsp; <a href="/">모든 리포트 보기</a></p>
+  <p style="margin-top:8px;font-size:0.75rem;">본 리포트는 Claude AI가 주요 기술 미디어를 크롤링해 자동으로 생성합니다. 원문은 각 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
