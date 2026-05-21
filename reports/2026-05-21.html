@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 5월 21일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffd166;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 20px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      font-size: 1.05rem;
+      color: var(--accent2);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Section header ── */
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 48px 0 20px;
+    }
+    .section-icon {
+      width: 36px; height: 36px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .section-icon.purple { background: rgba(108,99,255,0.18); border: 1px solid rgba(108,99,255,0.35); }
+    .section-icon.teal   { background: rgba(0,212,170,0.14);  border: 1px solid rgba(0,212,170,0.3); }
+    .section-icon.red    { background: rgba(255,107,107,0.14); border: 1px solid rgba(255,107,107,0.3); }
+    .section-icon.gold   { background: rgba(255,209,102,0.14); border: 1px solid rgba(255,209,102,0.3); }
+    .section-icon.blue   { background: rgba(79,195,247,0.14);  border: 1px solid rgba(79,195,247,0.3); }
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section-title span {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      margin-left: 8px;
+    }
+
+    /* ── Cards ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 26px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--card-shadow);
+      border-color: rgba(108,99,255,0.35);
+    }
+    .card:hover::before { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .tag-purple { background: rgba(108,99,255,0.18); color: #a89fff; border: 1px solid rgba(108,99,255,0.3); }
+    .tag-teal   { background: rgba(0,212,170,0.14);  color: #00d4aa; border: 1px solid rgba(0,212,170,0.3); }
+    .tag-red    { background: rgba(255,107,107,0.14); color: #ff8e8e; border: 1px solid rgba(255,107,107,0.3); }
+    .tag-gold   { background: rgba(255,209,102,0.14); color: #ffd166; border: 1px solid rgba(255,209,102,0.3); }
+    .tag-blue   { background: rgba(79,195,247,0.14);  color: #4fc3f7; border: 1px solid rgba(79,195,247,0.3); }
+
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .card-summary {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .card-source {
+      font-size: 0.75rem;
+      color: #5a5f7a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-source::before {
+      content: '';
+      width: 14px; height: 14px;
+      border-radius: 4px;
+      background: var(--surface2);
+      display: inline-block;
+    }
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(108,99,255,0.14);
+      border: 1px solid rgba(108,99,255,0.35);
+      color: #a89fff;
+      text-decoration: none;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .btn-link:hover {
+      background: rgba(108,99,255,0.28);
+      border-color: rgba(108,99,255,0.6);
+      color: #fff;
+    }
+    .btn-link svg { width: 12px; height: 12px; }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ── Back nav ── */
+    .nav-bar {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      header { padding: 36px 16px 28px; }
+      main { padding: 28px 16px 60px; }
+      .card { padding: 18px; }
+      .stats-bar { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <a class="nav-back" href="../index.html">← 전체 리포트 목록</a>
+</nav>
+
+<header>
+  <div class="header-badge">AI Daily Reporter</div>
+  <h1><span>AI 뉴스</span> 데일리 리포트</h1>
+  <div class="header-date">2026년 5월 21일 목요일</div>
+  <p>Hacker News · ArXiv · VentureBeat · TechCrunch · The Verge · MIT Tech Review 등에서 선별한 오늘의 주요 AI 뉴스</p>
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">12</div><div class="stat-label">주요 기사</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">소스</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">카테고리</div></div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══ SECTION 1: Industry & Companies ═══ -->
+  <div class="section-header">
+    <div class="section-icon purple">🏢</div>
+    <div class="section-title">산업 &amp; 기업 동향 <span>Industry &amp; Companies</span></div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">OpenAI Co-Founder Andrej Karpathy Joins Anthropic's Pre-Training Team</div>
+        <span class="card-tag tag-purple">인재 이동</span>
+      </div>
+      <p class="card-summary">
+        AI 분야 최고 권위자 중 한 명인 안드레이 카파시가 OpenAI 공동 창업자 신분으로 경쟁사 Anthropic에 합류했습니다.
+        그는 Anthropic의 사전 학습(pre-training) 팀에서 Claude 모델을 활용해 AI 연구 자체를 가속화하는 새로운 그룹을 이끌 예정입니다.
+        Tesla AI 책임자, Eureka Labs 창업 등 화려한 이력을 가진 그의 합류는 Anthropic이 최고 AI 인재를 흡수하는 강력한 허브로 부상했음을 알리는 신호탄으로 평가받습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">TechCrunch</span>
+        <a class="btn-link" href="https://techcrunch.com/2026/05/19/openai-co-founder-andrej-karpathy-joins-anthropics-pre-training-team/" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Meta Cuts 8,000 Jobs in Sweeping AI Restructuring</div>
+        <span class="card-tag tag-red">구조조정</span>
+      </div>
+      <p class="card-summary">
+        Meta가 전체 인력의 약 10%에 해당하는 8,000명을 감원하는 대규모 구조조정을 단행했습니다.
+        동시에 별도로 7,000명을 'Applied AI Engineering', 'Agent Transformation Accelerator' 등 AI 중심 팀으로 재배치하며 2026년 한 해에만 1,150억~1,350억 달러를 AI 인프라에 투자할 계획을 밝혔습니다.
+        마크 저커버그는 이번 조치가 AI 전환을 위한 불가피한 결정이라고 설명했으며, 하반기 추가 감원도 예고되어 있습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">NPR / The Next Web</span>
+        <a class="btn-link" href="https://www.npr.org/2026/05/20/nx-s1-5826917/meta-layoffs-ai-jobs" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Jury Unanimously Dismisses Elon Musk's Lawsuit Against OpenAI and Sam Altman</div>
+        <span class="card-tag tag-gold">법률</span>
+      </div>
+      <p class="card-summary">
+        캘리포니아 배심원단이 일론 머스크의 OpenAI·샘 알트만 상대 소송을 공소시효 도과를 이유로 만장일치로 기각했습니다.
+        머스크는 OpenAI가 비영리 정신을 저버리고 영리기업으로 변질됐다며 알트만과 브록만 해임 및 최대 1,500억 달러 환수를 요구했으나, 9명의 배심원은 소송 제기가 3년 시효를 넘겼다고 판단해 2시간 만에 결론을 내렸습니다.
+        이번 판결로 OpenAI는 IPO를 향한 중요한 법적 장애물을 제거하게 됐습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">NPR / CBS News</span>
+        <a class="btn-link" href="https://www.npr.org/2026/05/18/nx-s1-5822366/musk-altman-openai-jury-verdict-claims-dismissed" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /card-grid -->
+
+  <div class="divider" style="margin: 40px 0;"></div>
+
+  <!-- ═══ SECTION 2: Big Tech AI Products ═══ -->
+  <div class="section-header">
+    <div class="section-icon teal">🚀</div>
+    <div class="section-title">빅테크 AI 제품 <span>Big Tech Products</span></div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Google I/O 2026: Gemini 3.5 Flash, Gemini Omni, Managed Agents — 100+ Announcements</div>
+        <span class="card-tag tag-teal">제품 출시</span>
+      </div>
+      <p class="card-summary">
+        구글은 I/O 2026에서 Gemini 3.5 Flash(이전 세대 대비 4배 빠르고 엔터프라이즈 연간 절감액 10억 달러 이상), 영상·음성·이미지를 통합 처리하는 Gemini Omni, 그리고 단일 API 호출로 원격 Linux 환경을 자동 프로비저닝하는 Managed Agents 등 100여 개의 AI 기능을 발표했습니다.
+        개인 AI 에이전트 'Gemini Spark'는 노트북이 닫혀 있어도 24시간 이메일 초안 작성·문서 조립·인박스 모니터링 등을 수행하며 향후 구매 대행 기능도 탑재될 예정입니다.
+        구글 내부 토큰 소비량은 10주 만에 6배 급증해 3조 토큰을 돌파했다고 밝혔습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">Google Blog / 9to5Google</span>
+        <a class="btn-link" href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Apple iOS 27 to Allow Users to Choose Between Gemini, Claude, and ChatGPT</div>
+        <span class="card-tag tag-blue">플랫폼</span>
+      </div>
+      <p class="card-summary">
+        애플은 iOS 27에 'AI Extensions' 프레임워크를 도입해 사용자가 Siri, 라이팅 툴, 이미지 플레이그라운드 등 Apple Intelligence 기능에서 사용할 AI 모델을 Google Gemini, Anthropic Claude, OpenAI ChatGPT 중 직접 선택할 수 있도록 할 계획입니다.
+        각 모델에 별도의 목소리를 지정하는 기능도 추가되며, WWDC가 열리는 6월 8일에 공식 발표될 예정입니다.
+        이번 개방은 ChatGPT와의 독점 통합 구조를 해소하고 AI 생태계 경쟁을 iOS 내부로 끌어들이는 전략적 전환점으로 주목받습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">9to5Mac / Bloomberg</span>
+        <a class="btn-link" href="https://9to5mac.com/2026/05/05/ios-27-will-let-you-choose-between-gemini-claude-and-more-for-ai-features-report/" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider" style="margin: 40px 0;"></div>
+
+  <!-- ═══ SECTION 3: Policy & Regulation ═══ -->
+  <div class="section-header">
+    <div class="section-icon red">⚖️</div>
+    <div class="section-title">정책 &amp; 규제 <span>Policy &amp; Regulation</span></div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Trump Delays Executive Order on AI Model Review — White House Studying Revisions</div>
+        <span class="card-tag tag-red">규제</span>
+      </div>
+      <p class="card-summary">
+        트럼프 대통령이 AI 모델 출시 전 정부 사전 검토를 골자로 한 행정명령 서명을 "마음에 들지 않는 부분이 있다"며 돌연 연기했습니다.
+        해당 초안에는 AI 기업이 출시 전 최대 90일간 모델을 정부에 공유하는 자발적 프레임워크가 담겨 있었으나, OpenAI·Anthropic 등 기업들은 14일 정도의 더 짧은 기간을 선호한 것으로 알려졌습니다.
+        백악관은 사이버보안 허점을 공동 점검하는 '클리어링하우스' 조항도 검토 중이며, 수정된 행정명령이 조만간 재발의될 전망입니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">Washington Post / CNN</span>
+        <a class="btn-link" href="https://www.washingtonpost.com/technology/2026/05/21/white-house-tore-down-ai-rules-now-its-building-new-defenses/" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider" style="margin: 40px 0;"></div>
+
+  <!-- ═══ SECTION 4: Open Source & Research ═══ -->
+  <div class="section-header">
+    <div class="section-icon gold">🔬</div>
+    <div class="section-title">오픈소스 &amp; AI 연구 <span>Open Source &amp; Research</span></div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Cerebras Runs Trillion-Parameter Kimi K2.6 at ~1,000 Tokens/sec — 6.7× Faster Than GPU Clouds</div>
+        <span class="card-tag tag-gold">추론 인프라</span>
+      </div>
+      <p class="card-summary">
+        Cerebras가 중국 Moonshot AI의 1조 파라미터 오픈웨이트 모델 Kimi K2.6을 초당 약 981 토큰 속도로 엔터프라이즈 고객에게 서비스하기 시작했습니다.
+        이는 차순위 GPU 클라우드보다 6.7배, 전체 추론 서비스 중앙값보다 23배 빠른 속도로, 표준 에이전트 코딩 요청을 타사 공식 엔드포인트의 163초 대비 5.6초 만에 처리합니다.
+        웨이퍼 규모 칩에 가중치를 분산 저장하고 NVLink 대비 200배 이상의 대역폭을 가진 온-웨이퍼 네트워크로 레이어 간 통신을 처리하는 독자 아키텍처가 비결입니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat / Cerebras</span>
+        <a class="btn-link" href="https://venturebeat.com/technology/cerebras-says-its-chips-run-a-trillion-parameter-ai-model-nearly-7-times-faster-than-gpu-clouds" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Nous Research Drops Hermes 4 — Open-Source Models That Outperform ChatGPT Without Content Restrictions</div>
+        <span class="card-tag tag-gold">오픈소스 모델</span>
+      </div>
+      <p class="card-summary">
+        Nous Research가 수학·과학 추론, 지시 이행, 정교한 롤플레이 등 여러 영역에서 ChatGPT를 능가하면서도 콘텐츠 제한이 적은 오픈소스 LLM 시리즈 Hermes 4를 공개했습니다.
+        이 모델은 Hermes 3를 기반으로 하이브리드 추론 기능을 더해 어려운 문제에 더 많은 토큰을 '사용'하며 깊이 생각할 수 있습니다.
+        가중치는 Hugging Face에서 무료로 다운로드 가능하며, Hermes Agent 프레임워크는 이미 OpenRouter에서 하루 2,240억 토큰을 처리하며 최대 에이전트 프레임워크 자리를 차지했습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">VentureBeat / Nous Research</span>
+        <a class="btn-link" href="https://venturebeat.com/ai/nous-research-drops-hermes-4-ai-models-that-outperform-chatgpt-without-content-restrictions" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Physics-Informed Machine Learning Algorithm Advances Climate and Fluid Dynamics Modeling</div>
+        <span class="card-tag tag-teal">학술 연구</span>
+      </div>
+      <p class="card-summary">
+        하와이 대학교 마노아 캠퍼스 연구팀이 AI가 복잡한 데이터셋을 처리하면서도 물리 법칙을 철저히 준수할 수 있는 새로운 물리 기반 머신러닝(PIML) 알고리즘을 발표했습니다.
+        이 알고리즘은 유체 역학 및 기후 모델링 분야에서 기존 방법보다 높은 예측 정확도를 보여주며, 위성 데이터와 수치 시뮬레이션을 결합하는 형태로 확장될 수 있습니다.
+        물리 제약을 학습 과정에 통합함으로써 과학적 타당성이 떨어지는 AI 예측을 근본적으로 방지한다는 점에서 주목받고 있습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">ScienceDaily / University of Hawaiʻi</span>
+        <a class="btn-link" href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">AI Maps Scientific Papers to Predict Emerging Research Trends 2–3 Years in Advance</div>
+        <span class="card-tag tag-teal">학술 연구</span>
+      </div>
+      <p class="card-summary">
+        독일 카를스루에 공과대학(KIT) 연구팀이 머신러닝으로 과학 논문의 개념 관계를 지도화해 새로운 연구 트렌드를 2~3년 전에 예측하는 방법론을 Nature Machine Intelligence에 발표했습니다.
+        소재과학 분야 논문을 분석해 아직 주목받지 못한 개념 조합에서 미래 연구 아이디어를 도출하는 방식으로, 과학자들이 방대한 문헌을 효율적으로 탐색하고 혁신적 연구 방향을 선점할 수 있도록 돕습니다.
+        이 접근법은 재료과학 외 다양한 분야로 확장 가능해 AI 주도 과학적 발견(AI for Science)의 새로운 패러다임으로 평가받습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">TechXplore / Nature Machine Intelligence</span>
+        <a class="btn-link" href="https://techxplore.com/news/2026-04-ai-science-papers-trends-years.html" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider" style="margin: 40px 0;"></div>
+
+  <!-- ═══ SECTION 5: AI & Science / Hardware ═══ -->
+  <div class="section-header">
+    <div class="section-icon blue">🛰️</div>
+    <div class="section-title">AI × 과학 &amp; 하드웨어 <span>AI × Science &amp; Hardware</span></div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">NASA Tests Radiation-Hardened AI Chip That's 500× Faster Than Current Space Processors</div>
+        <span class="card-tag tag-blue">우주 AI</span>
+      </div>
+      <p class="card-summary">
+        NASA와 제트추진연구소(JPL)가 현재 운용 중인 우주 탐사선용 프로세서보다 500배 성능이 뛰어난 방사선 강화(radiation-hardened) AI 칩 'HPSC'를 테스트하고 있습니다.
+        손바닥 크기의 이 칩은 2022년형 Intel i7 노트북에 필적하는 연산력을 우주 환경에서 제공하며, 우주선이 지구 교신 없이 자율적으로 데이터를 분석하고 결정을 내릴 수 있게 합니다.
+        2026년 말 인증 완료 후 2028년 달 착륙 미션에 탑재될 예정으로, 심우주 탐사의 자율화를 획기적으로 앞당길 것으로 기대됩니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">NASA JPL / ScienceDaily</span>
+        <a class="btn-link" href="https://www.jpl.nasa.gov/news/hello-universe-nasas-next-gen-space-processor-undergoes-testing/" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="card-title">Penn Researchers Create Hybrid Light-Matter Particle to Dramatically Speed Up AI Computing</div>
+        <span class="card-tag tag-blue">AI 컴퓨팅</span>
+      </div>
+      <p class="card-summary">
+        펜실베이니아 대학 연구진이 빛과 물질의 혼성 입자(폴라리톤)를 이용한 새로운 컴퓨팅 아키텍처를 개발해 AI 연산을 대폭 가속하면서 에너지 소비는 획기적으로 줄이는 가능성을 제시했습니다.
+        기존 반도체 기반 AI 가속기와 달리 광자의 특성을 활용하므로 발열이 적고 병렬 처리 효율이 높아 차세대 AI 칩 설계의 유망한 대안으로 주목받고 있습니다.
+        연구팀은 이 기술이 데이터센터 전력 소모 문제를 해결할 새로운 패러다임이 될 수 있다고 강조했습니다.
+      </p>
+      <div class="card-footer">
+        <span class="card-source">Crescendo AI / TechXplore</span>
+        <a class="btn-link" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank" rel="noopener">
+          원문 보기
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 9.5l7-7M4 2.5h5.5V8"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Back to archive ── -->
+  <div style="text-align:center; margin-top: 56px;">
+    <a class="btn-link" href="../index.html" style="font-size:0.9rem; padding: 10px 22px;">← 전체 리포트 목록으로</a>
+  </div>
+
+</main>
+
+<footer>
+  <p>AI Daily Reporter &nbsp;·&nbsp; <a href="https://github.com/bini5036/bini5036.github.io" target="_blank">GitHub 저장소</a></p>
+  <p style="margin-top:6px;font-size:0.75rem;">본 리포트는 Claude AI가 자동 생성합니다. 원문은 각 기사의 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
