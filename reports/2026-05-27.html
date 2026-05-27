@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 5월 27일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffd166;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 20px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; }
+    header h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      position: relative;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Navigation ── */
+    .nav-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav-home {
+      color: var(--accent2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .nav-home:hover { opacity: 0.75; }
+    .nav-toc {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-pill {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Section header ── */
+    .section {
+      margin-bottom: 56px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section-header .source-url {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .story-count {
+      margin-left: auto;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(108,99,255,0.35);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .card:hover::before { opacity: 1; }
+    .card.hn::before    { background: linear-gradient(90deg, #ff6600, #ff9a00); }
+    .card.vb::before    { background: linear-gradient(90deg, #6c63ff, #a89fff); }
+    .card.tc::before    { background: linear-gradient(90deg, #00d4aa, #00b894); }
+    .card.tv::before    { background: linear-gradient(90deg, #ff6b6b, #ee5a24); }
+    .card.mit::before   { background: linear-gradient(90deg, #ffd166, #f9a825); }
+    .card.arxiv::before { background: linear-gradient(90deg, #74b9ff, #0984e3); }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .tag {
+      font-size: 0.68rem;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag.hn    { background: rgba(255,102,0,0.15);   color: #ff9a00; border: 1px solid rgba(255,102,0,0.3); }
+    .tag.vb    { background: rgba(108,99,255,0.15);  color: #a89fff; border: 1px solid rgba(108,99,255,0.3); }
+    .tag.tc    { background: rgba(0,212,170,0.12);   color: var(--accent2); border: 1px solid rgba(0,212,170,0.3); }
+    .tag.tv    { background: rgba(255,107,107,0.15); color: #ff6b6b; border: 1px solid rgba(255,107,107,0.3); }
+    .tag.mit   { background: rgba(255,209,102,0.12); color: #ffd166; border: 1px solid rgba(255,209,102,0.3); }
+    .tag.arxiv { background: rgba(116,185,255,0.12); color: #74b9ff; border: 1px solid rgba(116,185,255,0.3); }
+
+    .card h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .read-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(108,99,255,0.1);
+    }
+    .read-btn::after { content: '→'; }
+
+    /* ── Highlight cards ── */
+    .card.highlight {
+      border-color: rgba(0,212,170,0.25);
+      background: linear-gradient(135deg, #1a1d27 0%, #0f2420 100%);
+    }
+    .card.highlight::before {
+      background: linear-gradient(90deg, #00d4aa, #6c63ff);
+      opacity: 1;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      header { padding: 32px 16px 24px; }
+      main { padding: 28px 16px 60px; }
+      .card { padding: 18px 18px; }
+      .header-stats { gap: 16px; }
+      .nav-toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">AI Daily Reporter</div>
+  <h1><span>AI 뉴스</span> 리포트</h1>
+  <div class="header-date">2026년 5월 27일 (수요일)</div>
+  <p>오늘의 인공지능 주요 뉴스를 한국어로 요약한 데일리 리포트입니다.</p>
+  <div class="header-stats">
+    <div class="stat"><span class="stat-num">13</span><span class="stat-label">기사</span></div>
+    <div class="stat"><span class="stat-num">7</span><span class="stat-label">출처</span></div>
+    <div class="stat"><span class="stat-num">2026.05.27</span><span class="stat-label">발행일</span></div>
+  </div>
+</header>
+
+<nav class="nav-bar">
+  <a class="nav-home" href="../index.html">← 아카이브</a>
+  <div class="nav-toc">
+    <a class="nav-pill" href="#hn">Hacker News</a>
+    <a class="nav-pill" href="#vb">VentureBeat</a>
+    <a class="nav-pill" href="#tc">TechCrunch</a>
+    <a class="nav-pill" href="#tv">The Verge</a>
+    <a class="nav-pill" href="#mit">MIT Tech Review</a>
+    <a class="nav-pill" href="#arxiv">ArXiv</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ══ Hacker News ══ -->
+  <section class="section" id="hn">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,102,0,0.12);border:1px solid rgba(255,102,0,0.25);">🔶</div>
+      <div>
+        <h2>Hacker News</h2>
+        <div class="source-url">news.ycombinator.com</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card hn highlight">
+        <div class="card-meta"><span class="tag hn">HN</span></div>
+        <h3>Anthropic Closes Second $30B Round in 2026, Valuation Tops $900B</h3>
+        <p>앤트로픽이 2026년 두 번째 300억 달러 규모의 성장 투자 유치에 성공하며 기업 가치가 9,000억 달러를 초과해 세계 최고가 비상장 AI 기업으로 올라섰습니다. 시퀀이아 캐피털·드래고니어·얼티미터·그리노크가 주도한 이번 라운드는 앤트로픽의 연간 반복 매출(ARR)이 2월 140억 달러에서 4월 300억 달러로 12주 만에 2배 가까이 뛴 사실을 반영합니다. 2026년 10월 IPO가 유력한 시나리오로 거론되고 있습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.startuphub.ai/ai-news/ai-news/2026/four-labs-four-acquisitions-ai-consolidation-may-2026" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card hn">
+        <div class="card-meta"><span class="tag hn">HN</span></div>
+        <h3>Anthropic Acquires Stainless SDK Generator for $300M+</h3>
+        <p>앤트로픽이 OpenAPI 스펙으로부터 SDK를 자동 생성하는 스타트업 스테인리스(Stainless)를 3억 달러 이상에 인수했습니다. OpenAI·Google·Cloudflare 등 주요 기업들이 스테인리스에 의존해 왔으며, 앤트로픽은 이번 인수로 개발자가 AI API와 상호작용하는 핵심 배포 경로를 확보하게 됩니다. 스테인리스의 기존 공개 제품은 서비스가 종료됩니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.startuphub.ai/ai-news/ai-news/2026/four-labs-four-acquisitions-ai-consolidation-may-2026" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card hn">
+        <div class="card-meta"><span class="tag hn">HN</span></div>
+        <h3>Four AI Lab Acquisitions in Five Days: The Consolidation Signal</h3>
+        <p>5월 셋째 주, 주요 AI 연구소들이 5일 사이에 4건의 인수를 단행하며 업계 통합 신호를 뚜렷이 드러냈습니다. 이전까지는 자본 조달과 모델 경쟁에 집중했던 빅테크·대형 AI 기업들이 이제는 핵심 인프라·툴링·인재를 흡수하는 방향으로 전략을 전환하고 있습니다. 전문가들은 이를 AI 산업이 혼돈의 확장기에서 구조적 통합기로 진입하는 징후로 해석합니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.startuphub.ai/ai-news/ai-news/2026/four-labs-four-acquisitions-ai-consolidation-may-2026" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ VentureBeat ══ -->
+  <section class="section" id="vb">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);">🚀</div>
+      <div>
+        <h2>VentureBeat</h2>
+        <div class="source-url">venturebeat.com</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card vb highlight">
+        <div class="card-meta"><span class="tag vb">VentureBeat</span></div>
+        <h3>DataGrail Report: 63.6% of AI Vendors Don't Disclose Third-Party Data Processing</h3>
+        <p>데이터그레일이 2,400개 소프트웨어 공급업체를 분석한 2026년 개인정보 및 AI 트렌드 보고서를 발표했습니다. AI 기능을 전면에 내세우는 공급업체 중 63.6%가 법적 문서에 제3자 AI 서브프로세서를 공개하지 않아, 기업들이 검토하지 않은 AI 모델에 고객 데이터를 무의식적으로 노출시키고 있을 가능성이 제기됩니다. 보고서는 2027년경에는 자율 에이전트가 해당 데이터를 어떻게 활용할지 스스로 결정하는 상황이 올 수 있다고 경고합니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://venturebeat.com/security/datagrail-report-finds-your-vendor-may-be-sending-data-to-ai-models-you-never-approved" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card vb">
+        <div class="card-meta"><span class="tag vb">VentureBeat</span></div>
+        <h3>From Assistance to Autonomy: How Agentic AI Is Redefining Enterprises</h3>
+        <p>단순 보조 도구에서 자율 행위자로 진화하는 에이전틱 AI가 기업 환경을 근본적으로 재정의하고 있다는 분석이 나왔습니다. 반복 업무 자동화를 넘어 AI가 스스로 목표를 세우고 멀티스텝 작업을 실행하는 단계로 이행하면서, 조직의 워크플로우·거버넌스·책임 구조 전반을 재설계해야 한다는 목소리가 커지고 있습니다. 전문가들은 이 전환이 기술 도입 이슈가 아니라 비즈니스 전략 이슈라고 강조합니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://venturebeat.com/technology/from-assistance-to-autonomy-how-agentic-ai-is-redefining-enterprises" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card vb">
+        <div class="card-meta"><span class="tag vb">VentureBeat</span></div>
+        <h3>Thinking Machines Lab Previews Near-Realtime AI Voice and Video Interaction Models</h3>
+        <p>씽킹 머신스 랩이 거의 실시간에 가까운 AI 음성·영상 대화를 가능하게 하는 새로운 '인터랙션 모델' 프리뷰를 공개했습니다. 이 모델은 사람과 AI 간의 자연스러운 멀티모달 대화 경험을 목표로 하며, 응답 지연을 대폭 줄여 실제 대화에 가까운 상호작용을 구현합니다. 실시간 AI 커뮤니케이션 경쟁이 본격화되면서 업계의 주목을 받고 있습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://venturebeat.com/technology/thinking-machines-shows-off-preview-of-near-realtime-ai-voice-and-video-conversation-with-new-interaction-models" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ TechCrunch ══ -->
+  <section class="section" id="tc">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(0,212,170,0.10);border:1px solid rgba(0,212,170,0.25);">🟢</div>
+      <div>
+        <h2>TechCrunch</h2>
+        <div class="source-url">techcrunch.com</div>
+      </div>
+      <span class="story-count">2 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card tc">
+        <div class="card-meta"><span class="tag tc">TechCrunch</span></div>
+        <h3>The Haves and Have-Nots of the AI Gold Rush</h3>
+        <p>AI 호황의 수혜가 극소수에게 집중되는 불균형 현상이 심화되고 있다는 분석이 나왔습니다. OpenAI·앤트로픽·엔비디아 등 약 1만 명의 직원이 2,000만 달러 이상의 자산을 보유한 반면, 일반 소프트웨어 엔지니어들은 AI 대체 위기와 대규모 해고에 직면하며 경력 불안이 고조되고 있습니다. 전문가들은 이 격차가 기술 산업 내 사회경제적 분열을 더욱 확대할 것이라고 우려합니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://techcrunch.com/2026/05/16/the-haves-and-have-nots-of-the-ai-gold-rush/" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card tc">
+        <div class="card-meta"><span class="tag tc">TechCrunch</span></div>
+        <h3>Digg Tries Again as an AI News Aggregator</h3>
+        <p>케빈 로즈가 부활시킨 디그(Digg)가 이번에는 AI 뉴스 집계 플랫폼으로 재탄생했습니다. '특정 분야에서 가장 영향력 있는 목소리를 추적하고 주목할 만한 뉴스를 부상'시키는 것을 목표로 하며, AI 기술을 활용해 방대한 미디어 생태계에서 신호와 소음을 분리합니다. AI가 콘텐츠 큐레이션 자체를 변화시키는 흐름 속에서 뉴스 소비 방식의 새로운 실험으로 주목받고 있습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://techcrunch.com/2026/05/11/digg-tries-again-this-time-as-an-ai-news-aggregator/" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ The Verge ══ -->
+  <section class="section" id="tv">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,107,107,0.10);border:1px solid rgba(255,107,107,0.25);">🔴</div>
+      <div>
+        <h2>The Verge / CNBC</h2>
+        <div class="source-url">theverge.com · cnbc.com</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card tv highlight">
+        <div class="card-meta"><span class="tag tv">The Verge</span></div>
+        <h3>Google Gemini 3.5 Flash Now Generally Available — Frontier Speed at a Fraction of the Cost</h3>
+        <p>구글이 Gemini 3.5 Flash를 정식 출시했습니다. 유사 모델 대비 최대 4배 빠른 속도와 절반~3분의 1 수준의 가격(입력 150만 토큰당 1.50달러/출력 9달러)을 제공하며, 100만 토큰 컨텍스트를 지원합니다. 성능·비용·속도의 세 축을 동시에 만족시키는 '프런티어급 인텔리전스'를 표방하며 엔터프라이즈 AI 워크로드 시장을 본격 공략합니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card tv">
+        <div class="card-meta"><span class="tag tv">CNBC</span></div>
+        <h3>Google Debuts Gemini Spark: A General-Purpose AI Agent for Personal Use</h3>
+        <p>구글이 개인 사용자 대상의 범용 AI 에이전트 '제미나이 스파크(Gemini Spark)'를 공개했습니다. 연결된 앱 전반의 정보를 추론·통합하는 능력을 갖추고 있으며, 현재 베타 단계로 구글 AI 울트라 구독자와 신뢰 테스터를 대상으로 먼저 출시됩니다. 오픈AI GPT 기반 에이전트와 경쟁하며 AI 개인 비서 시장을 둘러싼 구글의 전략이 본격화됐습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.cnbc.com/2026/05/19/google-ai-ultra-gemini-spark-omni.html" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card tv">
+        <div class="card-meta"><span class="tag tv">The Verge</span></div>
+        <h3>Microsoft Copilot Studio: Computer-Using Agents Now Generally Available</html>
+        <p>마이크로소프트가 코파일럿 스튜디오 5월 업데이트를 통해 '컴퓨터 사용 에이전트(Computer-Using Agents)'를 정식 출시했습니다. 이 에이전트는 사람과 동일하게 데스크톱·웹 애플리케이션과 직접 상호작용하며 화면 탐색, 클릭, 양식 입력, 데이터 추출 등을 자율적으로 수행합니다. 시각적 인터페이스를 가진 모든 앱에서 작동해 RPA를 대체할 차세대 자동화 솔루션으로 기대를 모읍니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.buildfastwithai.com/blogs/ai-news-today-may-27-2026" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ MIT Technology Review ══ -->
+  <section class="section" id="mit">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,209,102,0.10);border:1px solid rgba(255,209,102,0.25);">🏛️</div>
+      <div>
+        <h2>MIT Technology Review</h2>
+        <div class="source-url">technologyreview.com</div>
+      </div>
+      <span class="story-count">1 story</span>
+    </div>
+    <div class="cards">
+
+      <div class="card mit">
+        <div class="card-meta"><span class="tag mit">MIT Tech Review</span></div>
+        <h3>New Method Could Increase LLM Training Efficiency by Up to 210%</h3>
+        <p>MIT 연구팀이 유휴 컴퓨팅 자원을 활용해 소형 드래프터 모델을 병렬 학습시키는 방식으로 LLM 훈련 속도를 70~210% 향상시키는 새로운 기법을 발표했습니다. 정확도를 유지하면서도 훈련 속도를 획기적으로 높일 수 있으며, 드래프터 모델은 이후 추론 단계에서도 재활용 가능합니다. 점점 커지는 AI 모델의 훈련 비용 문제에 실질적인 해결책을 제시한다는 평가를 받고 있습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ ArXiv ══ -->
+  <section class="section" id="arxiv">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(116,185,255,0.10);border:1px solid rgba(116,185,255,0.25);">📄</div>
+      <div>
+        <h2>ArXiv / Research</h2>
+        <div class="source-url">arxiv.org · llm-stats.com</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card arxiv highlight">
+        <div class="card-meta"><span class="tag arxiv">ArXiv / Model</span></div>
+        <h3>SubQ: Non-Transformer Architecture Raises $29M, Claims 12M-Token Native Context</h3>
+        <p>SubQ가 트랜스포머가 아닌 새로운 아키텍처를 채택한 AI 모델로 2,900만 달러 시드 투자를 유치하며 데뷔했습니다. 네이티브 1,200만 토큰 컨텍스트를 지원해 코드베이스 전체 분석, 장문 서류 처리, 다중 문서 연구에 특화돼 있으며, 트랜스포머 패러다임을 벗어난 차세대 아키텍처 경쟁의 새로운 주자로 주목받습니다. 업계는 트랜스포머 이후 시대의 가능성을 가늠하는 벤치마크로 SubQ를 예의주시하고 있습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://whatllm.org/blog/new-ai-models-may-2026" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card arxiv">
+        <div class="card-meta"><span class="tag arxiv">ArXiv / Google</span></div>
+        <h3>Google TurboQuant: New Algorithm Cuts KV Cache Memory Overhead Significantly</h3>
+        <p>구글 리서치가 ICLR 2026에서 LLM 추론의 병목인 KV 캐시 메모리 오버헤드를 대폭 줄이는 TurboQuant 알고리즘을 공개했습니다. PolarQuant 벡터 회전과 양자화된 존슨-린덴슈트라우스(Johnson-Lindenstrauss) 압축 기법을 결합해 정밀도 손실 없이 메모리 사용량을 줄입니다. 대형 모델을 엣지 또는 저비용 인프라에서 실행할 수 있게 해주는 핵심 기술로 평가받습니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://llm-stats.com/ai-news" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+      <div class="card arxiv">
+        <div class="card-meta"><span class="tag arxiv">Model Release</span></div>
+        <h3>GPT-5.5 Ships: OpenAI's Strongest Agentic Model Yet Targets Enterprise</h3>
+        <p>오픈AI가 지금까지 구축한 가장 강력한 에이전틱 역량을 탑재한 GPT-5.5를 출시했습니다. 엔터프라이즈 지식 업무와 코딩에 최적화돼 있으며, 멀티스텝 자율 작업 수행 능력에서 이전 모델을 크게 뛰어넘는다는 평가를 받습니다. 앤트로픽 클로드, 구글 제미나이와의 에이전틱 AI 3파전이 기업 시장에서 본격화되는 신호탄으로 해석됩니다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://llm-stats.com/llm-updates" target="_blank">원문 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>AI Daily Reporter &nbsp;·&nbsp; <a href="../index.html">← 아카이브로 돌아가기</a> &nbsp;·&nbsp; <a href="https://github.com/bini5036/bini5036.github.io" target="_blank">GitHub 저장소</a></p>
+  <p style="margin-top:6px;font-size:0.75rem;">본 리포트는 Claude AI가 자동 수집·생성합니다. 원문은 각 기사의 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
