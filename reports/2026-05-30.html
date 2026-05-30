@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 5월 30일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffd166;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 20px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; }
+    header h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 24px;
+      position: relative;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      display: block;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Navigation ── */
+    .nav-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .nav-home {
+      color: var(--accent2);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .nav-home:hover { opacity: 0.75; }
+    .nav-toc {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .nav-pill {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Section header ── */
+    .section { margin-bottom: 56px; }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .section-header h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section-header .source-url {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .story-count {
+      margin-left: auto;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Cards ── */
+    .cards { display: grid; gap: 16px; }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(108,99,255,0.35);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .card:hover::before { opacity: 1; }
+    .card.hn::before    { background: linear-gradient(90deg, #ff6600, #ff9a00); }
+    .card.vb::before    { background: linear-gradient(90deg, #6c63ff, #a89fff); }
+    .card.tc::before    { background: linear-gradient(90deg, #00d4aa, #00b894); }
+    .card.tv::before    { background: linear-gradient(90deg, #ff6b6b, #ee5a24); }
+    .card.mit::before   { background: linear-gradient(90deg, #ffd166, #f9a825); }
+    .card.arxiv::before { background: linear-gradient(90deg, #74b9ff, #0984e3); }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .tag {
+      font-size: 0.68rem;
+      padding: 2px 9px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .tag.hn    { background: rgba(255,102,0,0.15);   color: #ff9a00; border: 1px solid rgba(255,102,0,0.3); }
+    .tag.vb    { background: rgba(108,99,255,0.15);  color: #a89fff; border: 1px solid rgba(108,99,255,0.3); }
+    .tag.tc    { background: rgba(0,212,170,0.12);   color: var(--accent2); border: 1px solid rgba(0,212,170,0.3); }
+    .tag.tv    { background: rgba(255,107,107,0.15); color: #ff6b6b; border: 1px solid rgba(255,107,107,0.3); }
+    .tag.mit   { background: rgba(255,209,102,0.12); color: #ffd166; border: 1px solid rgba(255,209,102,0.3); }
+    .tag.arxiv { background: rgba(116,185,255,0.12); color: #74b9ff; border: 1px solid rgba(116,185,255,0.3); }
+
+    .card h3 {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.45;
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .read-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(108,99,255,0.1);
+    }
+    .read-btn::after { content: '↗'; font-size: 0.85em; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      header { padding: 32px 16px 24px; }
+      main { padding: 28px 16px 60px; }
+      .card { padding: 18px 20px; }
+      .header-stats { gap: 16px; }
+      .stat-num { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">AI Daily Reporter</div>
+  <h1><span>AI 뉴스</span> 리포트</h1>
+  <div class="header-date">2026년 5월 30일 토요일</div>
+  <p>오늘의 주요 AI 뉴스를 엄선하여 한국어로 요약한 데일리 리포트입니다.</p>
+  <div class="header-stats">
+    <div class="stat"><span class="stat-num">14</span><span class="stat-label">기사</span></div>
+    <div class="stat"><span class="stat-num">6</span><span class="stat-label">출처</span></div>
+    <div class="stat"><span class="stat-num">5</span><span class="stat-label">핵심 테마</span></div>
+  </div>
+</header>
+
+<nav class="nav-bar">
+  <a class="nav-home" href="../index.html">← 아카이브</a>
+  <div class="nav-toc">
+    <a class="nav-pill" href="#sec-tc">TechCrunch</a>
+    <a class="nav-pill" href="#sec-vb">VentureBeat</a>
+    <a class="nav-pill" href="#sec-hn">Hacker News</a>
+    <a class="nav-pill" href="#sec-mit">MIT Tech Review</a>
+    <a class="nav-pill" href="#sec-tv">The Verge</a>
+    <a class="nav-pill" href="#sec-arxiv">arXiv</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ── TechCrunch ── -->
+  <section class="section" id="sec-tc">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.25);">🚀</div>
+      <div>
+        <h2>TechCrunch AI</h2>
+        <div class="source-url">techcrunch.com/category/artificial-intelligence</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card tc">
+        <div class="card-meta"><span class="tag tc">TechCrunch</span></div>
+        <h3>Anthropic Raises $65B in Series H at $965B Valuation, Eyes IPO</h3>
+        <p>Anthropic이 Altimeter Capital, Dragoneer, Greenoaks, Sequoia Capital 주도로 650억 달러(약 90조 원) 시리즈 H 펀딩을 완료하며 기업 가치를 9,650억 달러(약 1,330조 원)로 끌어올렸다. Amazon의 50억 달러 기존 투자를 포함한 하이퍼스케일러 150억 달러와 Micron·Samsung·SK하이닉스 등 메모리 반도체 기업이 전략적 파트너로 참여했다. 이번 라운드를 마지막 비공개 자금 조달로 보고 IPO를 준비하고 있으며, 연간 매출 런레이트는 470억 달러를 돌파한 것으로 알려졌다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://techcrunch.com/2026/05/28/anthropic-raises-65-billion-nears-1t-valuation-ahead-of-ipo/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card tc">
+        <div class="card-meta"><span class="tag tc">TechCrunch</span></div>
+        <h3>Google I/O 2026: Gemini Omni Launched — Video Generation Grounded in Real-World Knowledge</h3>
+        <p>구글이 Google I/O 2026에서 이미지·오디오·비디오·텍스트를 모두 입력받고 실세계 지식 기반의 비디오를 생성하는 'Gemini Omni' 모델 시리즈를 발표했다. 추론 능력과 창작 능력을 결합한 멀티모달 플래그십으로, Gemini 3.5 Flash 정식 출시와 함께 개발자 API가 즉시 공개됐다. 단일 API 호출로 원격 Linux 환경을 프로비저닝해 에이전트가 코드 실행·웹 브라우징을 수행하는 'Managed Agents'도 함께 출시됐다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card tc">
+        <div class="card-meta"><span class="tag tc">TechCrunch</span></div>
+        <h3>Cloudflare Builds Global LLM Inference Infrastructure With Custom Engine and Split-Processing</h3>
+        <p>Cloudflare가 자체 AI 추론 엔진을 개발해 LLM의 입력 처리(prefill)와 출력 생성(decode) 단계를 물리적으로 분리된 최적화 시스템에서 처리하는 인프라를 발표했다. 글로벌 엣지 네트워크를 활용해 사용자와 가장 가까운 지점에서 추론을 실행하며 GPU 효율을 극대화한다. 이 구조는 AI 추론의 지연 시간을 낮추는 동시에 확장성을 크게 높인다는 평가를 받는다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.infoq.com/news/2026/05/cloudflare-llm-infrastructure/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── VentureBeat ── -->
+  <section class="section" id="sec-vb">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);">💡</div>
+      <div>
+        <h2>VentureBeat AI</h2>
+        <div class="source-url">venturebeat.com/category/ai</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card vb">
+        <div class="card-meta"><span class="tag vb">VentureBeat</span></div>
+        <h3>Microsoft Agent 365 Goes GA — Unified Governance Layer for Enterprise AI Agents</h3>
+        <p>마이크로소프트가 기업용 AI 에이전트 통합 제어 플랫폼 'Agent 365'를 상업 고객 대상으로 정식 출시했다. Microsoft 및 파트너 에코시스템의 AI 에이전트를 단일 플레인에서 관찰·통제·보안 설정할 수 있으며, '섀도 AI'를 관리 자산으로 전환하는 거버넌스 레이어를 목표로 한다. 6개 기업 중 1개만이 실제 자율 에이전트를 구축한 현실에서, Agent 365는 에이전트 인프라의 표준화를 가속할 것으로 전망된다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://futurumgroup.com/insights/microsoft-agent-365-turns-shadow-ai-into-a-governed-asset-class/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card vb">
+        <div class="card-meta"><span class="tag vb">VentureBeat</span></div>
+        <h3>ServiceNow + Accenture Launch Forward-Deployed Engineering Program for Agentic AI at Scale</h3>
+        <p>ServiceNow와 Accenture가 기업 고객 환경에 직접 투입되는 전진 배치 엔지니어링(FDE) 프로그램을 출시해 에이전트 AI를 파일럿에서 프로덕션으로 전환하는 것을 지원한다. 양사의 엔지니어가 고객사 내부에서 협력하며 ServiceNow AI 플랫폼 기반의 에이전트 워크플로를 직접 구축하는 방식이다. 기업 AI 도입의 가장 큰 장벽인 '파일럿 트랩'을 해결하기 위한 실행 중심의 서비스 모델로 주목받고 있다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://newsroom.accenture.com/news/2026/servicenow-and-accenture-launch-forward-deployed-engineering-program-to-scale-agentic-ai-across-the-enterprise" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card vb">
+        <div class="card-meta"><span class="tag vb">VentureBeat</span></div>
+        <h3>Meta Begins Layoffs of 8,000 as It Reassigns 7,000 More to AI-Focused Teams</h3>
+        <p>메타가 AI 중심 구조 개편의 일환으로 약 8,000명의 감원을 시작하는 동시에, 7,000명을 AI 특화 팀으로 재배치하고 있다. 이는 메타의 전략적 우선순위가 광고 플랫폼에서 AI 에이전트·인프라로 급격히 이동하고 있음을 상징한다. 저커버그는 "2025년은 AI의 해였고, 2026년은 에이전트의 해"라는 내부 메모를 통해 조직 재편 방향을 공식화했다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://aibusiness.com/agentic-ai/prompt-ai-agents-becoming-operational-infrastructure" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Hacker News ── -->
+  <section class="section" id="sec-hn">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,102,0,0.12);border:1px solid rgba(255,102,0,0.25);">🔥</div>
+      <div>
+        <h2>Hacker News</h2>
+        <div class="source-url">news.ycombinator.com</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card hn">
+        <div class="card-meta"><span class="tag hn">Hacker News</span></div>
+        <h3>Anthropic Raises $65B — HN Debate: Is $965B Valuation Justified?</h3>
+        <p>Anthropic의 Series H 발표가 Hacker News 최상단을 차지하며 1,200개 이상의 댓글이 달렸다. 커뮤니티에서는 470억 달러 매출 런레이트 대비 약 20배 밸류에이션의 정당성, IPO 가능성과 시장 구조, Claude Code의 급성장이 핵심 드라이버인지에 대한 심층 토론이 전개됐다. 일부 개발자는 "처음으로 Anthropic이 실질적인 수익 기반을 보여줬다"며 긍정적 시각을 보인 반면, 거품 우려를 표명하는 의견도 많았다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://news.ycombinator.com/item?id=48313048" target="_blank" rel="noopener">HN 토론 보기</a>
+        </div>
+      </div>
+
+      <div class="card hn">
+        <div class="card-meta"><span class="tag hn">Hacker News</span></div>
+        <h3>Amazon Custom Silicon Crosses $20B Annual Run Rate, Up 40% QoQ</h3>
+        <p>아마존 CEO 앤디 재시가 자체 AI 칩(Trainium·Inferentia 등) 사업이 연간 200억 달러(약 28조 원) 매출 런레이트를 돌파하고 전 분기 대비 40% 성장했다고 밝혔다. 이는 NVIDIA에 대한 의존도를 낮추려는 초대형 클라우드 기업들의 인소싱 전략이 본격적인 성과를 내기 시작했음을 의미한다. HN 커뮤니티는 이를 AI 반도체 경쟁 구도의 근본적 변화로 분석하며 뜨거운 반응을 보였다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.buildfastwithai.com/blogs/ai-news-today-may-30-2026" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card hn">
+        <div class="card-meta"><span class="tag hn">Hacker News</span></div>
+        <h3>Anthropic + Goldman Sachs + Blackstone: $1.5B Claude Enterprise Deployment Joint Venture</h3>
+        <p>Anthropic이 골드만삭스·블랙스톤과 총 15억 달러 규모의 Claude 엔터프라이즈 배포 합작법인을 설립했다. Anthropic 엔지니어들이 중형 월스트리트 금융사에 직접 파견돼 Claude를 내재화하는 방식으로, PwC도 Claude Code와 Claude Cowork의 글로벌 롤아웃을 약정하고 3만 명의 전문가 인증을 추진 중이다. 이는 AI 기업이 컨설팅·금융 서비스와 수직 통합하는 새로운 사업 모델로 업계의 이목을 집중시키고 있다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://news.ycombinator.com/item?id=48313048" target="_blank" rel="noopener">HN 토론 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── MIT Technology Review ── -->
+  <section class="section" id="sec-mit">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,209,102,0.12);border:1px solid rgba(255,209,102,0.25);">🔬</div>
+      <div>
+        <h2>MIT Technology Review</h2>
+        <div class="source-url">technologyreview.com/topic/artificial-intelligence</div>
+      </div>
+      <span class="story-count">3 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card mit">
+        <div class="card-meta"><span class="tag mit">MIT Tech Review</span></div>
+        <h3>New Method Doubles LLM Training Speed While Preserving Accuracy</h3>
+        <p>MIT 연구진이 LLM 학습 효율을 2배로 높이는 새로운 방법을 발표했다. 정확도를 유지하면서 여러 추론 모델에서 학습 속도가 두 배 빨라졌으며, 이는 AI 모델 개발 비용을 크게 절감할 수 있는 기술적 돌파구로 평가된다. 특히 대규모 프론티어 모델 훈련에 드는 막대한 컴퓨팅 비용 문제를 부분적으로 해소할 수 있을 것으로 기대된다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://news.mit.edu/2026/new-method-could-increase-llm-training-efficiency-0226" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card mit">
+        <div class="card-meta"><span class="tag mit">MIT Tech Review</span></div>
+        <h3>LLM Market Forecast: $11.63B in 2026 to $823.93B by 2040 at 35.57% CAGR</h3>
+        <p>새로운 시장 조사 보고서에 따르면 대형 언어 모델(LLM) 시장이 2026년 116억 달러에서 2040년 8,239억 달러 규모로 연평균 35.57% 성장할 것으로 전망된다. 특화형 LLM 제품이 범용 챗봇 대신 기업 특화 문서·계약·규정 준수 워크플로에 통합되는 방향으로 시장이 분화하고 있다. LLM 콘텐츠 필터링 시장도 2026년 25억 달러를 돌파하며 안전·규정 준수 기술의 중요성이 부각되고 있다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://finance.yahoo.com/news/large-language-model-llm-research-141900590.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card mit">
+        <div class="card-meta"><span class="tag mit">MIT Tech Review</span></div>
+        <h3>2026: The Year AI Deployment Moved From Hype to Hard Questions — Compute, Safety, Business Value</h3>
+        <p>MIT 테크놀로지 리뷰의 2026년 AI 트렌드 분석에 따르면, AI 산업은 '초기 흥분 단계'를 벗어나 컴퓨팅 비용·데이터 접근·안전성·실제 비즈니스 가치라는 근본적 질문에 직면하고 있다. 프론티어 모델 간 경쟁이 사실상 '목과 목을 겨누는(neck-and-neck)' 수준이 됐으며, 각 기업은 비용·속도·컴퓨팅 자원에서 서로 다른 트레이드오프를 선택하고 있다. 에이전트 AI의 생산 배포 전환이 2026년의 핵심 기술 과제로 부상했다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.technologyreview.com/2026/04/21/1135643/10-ai-artificial-intelligence-trends-technologies-research-2026/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── The Verge ── -->
+  <section class="section" id="sec-tv">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,107,107,0.12);border:1px solid rgba(255,107,107,0.25);">📡</div>
+      <div>
+        <h2>The Verge AI</h2>
+        <div class="source-url">theverge.com/ai-artificial-intelligence</div>
+      </div>
+      <span class="story-count">2 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card tv">
+        <div class="card-meta"><span class="tag tv">The Verge</span></div>
+        <h3>Google DeepMind Hires Entire Contextual AI Team in $80–90M Licensing Structure</h3>
+        <p>구글 딥마인드가 기업용 AI 스타트업 Contextual AI의 전 팀원을 8,000만~9,000만 달러의 라이선싱 구조를 통해 채용했다. 이 계약은 반독점법상 기업 인수로 분류되지 않도록 설계된 이른바 '소프트 M&A'로, 빅테크가 규제를 피해 AI 스타트업 인재를 흡수하는 새로운 패턴으로 주목된다. AI 산업의 빠른 인재 이동이 스타트업 생태계에 미치는 영향에 대한 논의가 활발해지고 있다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.heygotrade.com/en/news/google-io-2026-gemini-deepmind-contextual-ai/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card tv">
+        <div class="card-meta"><span class="tag tv">The Verge</span></div>
+        <h3>How Google Plans to Win the AI War Against Anthropic and OpenAI</h3>
+        <p>Axios와 The Verge의 심층 분석에 따르면 구글은 검색·클라우드(GCP)·하드웨어(TPU)의 수직 통합 전략으로 OpenAI·Anthropic과의 AI 패권 경쟁에 임하고 있다. Google AI Studio의 개발자 생태계 확장, Android XR 안경, Ask YouTube 기능 등이 주요 무기로, DeepMind와 Google Brain 통합 이후 연구 역량도 집중 강화됐다. Anthropic이 엔터프라이즈 시장 점유율을 빠르게 확보하는 가운데 구글의 전방위 반격이 본격화하는 양상이다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://www.axios.com/2026/05/21/google-ai-anthropic-openai-war" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── arXiv ── -->
+  <section class="section" id="sec-arxiv">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(116,185,255,0.12);border:1px solid rgba(116,185,255,0.25);">📄</div>
+      <div>
+        <h2>arXiv — cs.AI / cs.LG</h2>
+        <div class="source-url">arxiv.org/list/cs.AI/recent · arxiv.org/list/cs.LG/recent</div>
+      </div>
+      <span class="story-count">2 stories</span>
+    </div>
+    <div class="cards">
+
+      <div class="card arxiv">
+        <div class="card-meta"><span class="tag arxiv">arXiv · cs.LG</span></div>
+        <h3>Scheduling LLM Inference With Uncertainty-Aware Output Length Predictions</h3>
+        <p>Haoyu Zheng, Yongqiang Zhang 등이 발표한 이 논문은 LLM 추론 스케줄링의 핵심 문제인 출력 길이 예측을 불확실성 인식(uncertainty-aware) 방식으로 개선하는 프레임워크를 제안한다. 출력 길이를 미리 정확히 예측함으로써 GPU 자원 배분과 배치 처리 효율을 크게 향상시켜 추론 비용 절감에 기여한다. 대규모 LLM 서비스 운영에서 실질적인 컴퓨팅 비용 절감으로 이어질 수 있는 실용적 연구로 평가된다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://arxiv.org/list/cs.LG/current" target="_blank" rel="noopener">arXiv 보기</a>
+        </div>
+      </div>
+
+      <div class="card arxiv">
+        <div class="card-meta"><span class="tag arxiv">arXiv · cs.LG</span></div>
+        <h3>The Rashomon Effect for Visualizing High-Dimensional Data</h3>
+        <p>Yiyang Sun, Haiyang Huang 등이 발표한 논문은 동일한 데이터에 대해 비슷한 예측 성능을 내는 여러 모델(라쇼몬 집합)들이 고차원 데이터 시각화에서 어떻게 다른 표현을 만드는지를 체계적으로 분석한다. 이 연구는 머신러닝 해석 가능성(explainability)의 근본적 한계를 조명하며, 단일 시각화에 의존하는 것의 위험성을 경고한다. 책임있는 AI 개발에서 모델 해석 다양성의 중요성을 강조하는 시의적절한 연구다.</p>
+        <div class="card-footer">
+          <a class="read-btn" href="https://arxiv.org/list/cs.LG/current" target="_blank" rel="noopener">arXiv 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>AI Daily Reporter &nbsp;·&nbsp; <a href="../index.html">← 아카이브로 돌아가기</a> &nbsp;·&nbsp; <a href="https://github.com/bini5036/bini5036.github.io" target="_blank" rel="noopener">GitHub 저장소</a></p>
+  <p style="margin-top:6px;font-size:0.75rem;">본 리포트는 Claude AI가 자동 생성합니다. 원문은 각 기사의 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
