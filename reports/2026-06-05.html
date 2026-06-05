@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 6월 5일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffd166;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 20px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; }
+    header h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-top: 28px;
+      position: relative;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Section ── */
+    .source-section { margin-bottom: 52px; }
+    .source-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+    }
+    .source-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+    }
+    .source-line { flex: 1; height: 1px; background: var(--border); }
+
+    /* Color schemes per source */
+    .src-policy    .source-icon { background: rgba(255,140,66,0.18); }
+    .src-anthropic .source-icon { background: rgba(255,107,107,0.18); }
+    .src-ms        .source-icon { background: rgba(94,174,255,0.15); }
+    .src-apple     .source-icon { background: rgba(200,200,200,0.12); }
+    .src-google    .source-icon { background: rgba(255,209,102,0.15); }
+    .src-nvidia    .source-icon { background: rgba(0,212,170,0.15); }
+    .src-opensource .source-icon { background: rgba(160,130,255,0.15); }
+    .src-enterprise .source-icon { background: rgba(108,99,255,0.18); }
+
+    .src-policy    .source-name { color: #ff8c42; }
+    .src-anthropic .source-name { color: #ff8a80; }
+    .src-ms        .source-name { color: #5eaeff; }
+    .src-apple     .source-name { color: #c8c8c8; }
+    .src-google    .source-name { color: #ffd166; }
+    .src-nvidia    .source-name { color: var(--accent2); }
+    .src-opensource .source-name { color: #c0aaff; }
+    .src-enterprise .source-name { color: #a89fff; }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      box-shadow: var(--card-shadow);
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      border-color: rgba(108,99,255,0.35);
+    }
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+    .tag-breaking   { background: rgba(255,107,107,0.15); color: #ff8a80; border: 1px solid rgba(255,107,107,0.3); }
+    .tag-model      { background: rgba(108,99,255,0.15); color: #a89fff; border: 1px solid rgba(108,99,255,0.3); }
+    .tag-research   { background: rgba(255,209,102,0.12); color: #ffd166; border: 1px solid rgba(255,209,102,0.28); }
+    .tag-enterprise { background: rgba(94,174,255,0.12); color: #5eaeff; border: 1px solid rgba(94,174,255,0.28); }
+    .tag-policy     { background: rgba(255,140,66,0.12); color: #ff8c42; border: 1px solid rgba(255,140,66,0.28); }
+    .tag-analysis   { background: rgba(160,130,255,0.12); color: #c0aaff; border: 1px solid rgba(160,130,255,0.28); }
+    .tag-industry   { background: rgba(255,209,102,0.12); color: #ffd166; border: 1px solid rgba(255,209,102,0.28); }
+    .tag-hardware   { background: rgba(0,212,170,0.12); color: var(--accent2); border: 1px solid rgba(0,212,170,0.28); }
+    .tag-ipo        { background: rgba(255,107,107,0.15); color: #ffb3b3; border: 1px solid rgba(255,107,107,0.3); }
+    .tag-security   { background: rgba(255,80,80,0.12); color: #ff7070; border: 1px solid rgba(255,80,80,0.28); }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .card-summary {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      flex: 1;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+    .card-source-label { font-size: 0.72rem; color: #555a7a; }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.25);
+      padding: 5px 13px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .card-link:hover {
+      background: rgba(108,99,255,0.22);
+      border-color: rgba(108,99,255,0.5);
+    }
+    .card-link::after { content: '→'; }
+
+    /* ── Highlight card ── */
+    .card.highlight {
+      border-color: rgba(0,212,170,0.3);
+      background: linear-gradient(135deg, #1a1d27 0%, #0d1f1c 100%);
+    }
+    .card.highlight:hover { border-color: rgba(0,212,170,0.55); }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 0 0 52px; }
+
+    /* ── Back nav ── */
+    .nav-bar {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px 0;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .back-link::before { content: '←'; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      header { padding: 36px 16px 28px; }
+      .header-stats { gap: 20px; }
+      main { padding: 28px 16px 60px; }
+      .cards { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="nav-bar">
+  <a class="back-link" href="../index.html">아카이브로 돌아가기</a>
+</div>
+
+<header>
+  <div class="header-badge">AI Daily Reporter</div>
+  <h1><span>AI 뉴스</span> 리포트</h1>
+  <div class="header-date">2026년 6월 5일 (금)</div>
+  <p>오늘의 주요 AI 뉴스를 엄선하여 한국어로 요약했습니다.</p>
+  <div class="header-stats">
+    <div class="stat">
+      <div class="stat-num">12</div>
+      <div class="stat-label">주요 기사</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">8</div>
+      <div class="stat-label">소스</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">미 AI 입법 폭풍</div>
+      <div class="stat-label">오늘의 빅 이슈</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ── 정책/입법 ── -->
+  <section class="source-section src-policy">
+    <div class="source-header">
+      <div class="source-icon">🏛️</div>
+      <div class="source-name">정책 &amp; 입법</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-breaking">속보 · 입법</span>
+        <div class="card-title">초당파 '위대한 미국 AI법' 초안 공개 — 3년간 주(州) AI 법률 전면 동결</div>
+        <div class="card-summary">공화당 제이 오버놀티 의원과 민주당 로리 트라한 의원이 269페이지 분량의 '위대한 미국 인공지능법(Great American AI Act)' 논의 초안을 공개했다. 핵심은 프론티어 AI 모델 개발 관련 주(州) 법률을 3년간 연방 차원에서 선점·동결하는 조항으로, 캘리포니아·콜로라도 등 각 주의 AI 규제 입법이 전면 중단될 수 있다. 동시에 대형 프론티어 개발사는 새 모델 출시 전 위험 계획서 제출·중요 안전사고 보고가 의무화되며, AI 표준화 기구(CAISI)에 연간 1억 달러를 배정하는 내용도 담겼다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">Roll Call / Axios / Broadband Breakfast</span>
+          <a class="card-link" href="https://rollcall.com/2026/06/04/bipartisan-ai-draft-proposes-three-year-preemption-of-state-laws/" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-policy">행정명령</span>
+        <div class="card-title">트럼프 대통령, AI 프론티어 모델 '자발적 30일 사전 공유' 행정명령 서명</div>
+        <div class="card-summary">트럼프 대통령이 6월 2일 '첨단 인공지능 혁신 및 보안 증진' 행정명령에 서명하며 AI 기업들이 프론티어 모델을 공개 전 최대 30일간 연방정부와 자발적으로 공유하도록 요청했다. 명령은 사이버 능력 벤치마킹과 국가안보 위험 평가를 포함하되, 의무 사전허가 제도는 명시적으로 배제해 혁신 억제 우려를 차단했다. 연방기관들은 2026년 8월 1일까지 자발적 참여 프레임워크를 설계해야 하며, 이는 트럼프 행정부의 '규제 최소화' 기조 속에서도 AI 안전에 방점을 찍은 이례적 조치로 평가받는다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">CNBC / NPR / PBS</span>
+          <a class="card-link" href="https://www.cnbc.com/2026/06/02/trump-executive-order-ai.html" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── Anthropic ── -->
+  <section class="source-section src-anthropic">
+    <div class="source-header">
+      <div class="source-icon">🤖</div>
+      <div class="source-name">Anthropic</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-ipo">IPO</span>
+        <div class="card-title">Anthropic, SEC에 기밀 S-1 제출 — 기업가치 $9,650억, 상장 후 $1조 돌파 전망</div>
+        <div class="card-summary">Anthropic이 6월 1일 SEC에 IPO 기밀 예비 신청서를 제출하며 AI 역사상 가장 주목받는 기업공개 절차를 공식 시작했다. $650억 시리즈H 이후 기업가치는 약 $9,650억에 달하며, 2026년 5월 기준 연간 실행 매출(ARR)은 $470억으로 전년 대비 4.7배 급성장했다. 주당 공모가와 주식 수는 아직 미정이며, 경쟁사 OpenAI의 기밀 IPO 서류 제출에 앞서 선수를 쳤다는 분석이 나온다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">TechCrunch / CNN / CNBC</span>
+          <a class="card-link" href="https://techcrunch.com/2026/06/01/anthropic-files-to-go-public/" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-industry">코드 자동화</span>
+        <div class="card-title">Anthropic "신규 프로덕션 코드의 80%를 Claude가 작성" — 인간 코딩 기준 임박</div>
+        <div class="card-summary">Anthropic이 자사의 새 프로덕션 코드 중 80%가 이미 Claude에 의해 생성되고 있다고 밝혀 업계에 충격을 줬다. 이는 AI 코드 생성이 단순 보조 도구를 넘어 주된 개발 주체로 전환되고 있음을 보여주는 강력한 사례로, AI 코드가 2026년 중 인간 수준의 품질 기준을 초월할 것이라는 전망을 뒷받침한다. 엔터프라이즈 팀들은 코드 검토·테스트 자동화 등 'AI 코드를 관리하는 AI' 파이프라인 구축에 속도를 내고 있다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">VentureBeat</span>
+          <a class="card-link" href="https://venturebeat.com/technology/anthropic-says-80-of-its-new-production-code-is-now-authored-by-claude-how-your-enterprise-can-keep-up" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── Microsoft Build 2026 ── -->
+  <section class="source-section src-ms">
+    <div class="source-header">
+      <div class="source-icon">🪟</div>
+      <div class="source-name">Microsoft Build 2026</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-security">에이전트 보안</span>
+        <div class="card-title">Microsoft, 'MXC' 출시 — OS 커널 수준에서 AI 에이전트 권한을 봉쇄하는 샌드박스</div>
+        <div class="card-summary">Microsoft가 Build 2026에서 Windows에 내장된 커널 강제 실행 컨테이너(MXC·Microsoft Execution Containers)를 공개했다. 개발자와 IT 관리자가 AI 에이전트가 접근할 수 있는 파일·네트워크·앱을 정책으로 선언하면 OS 커널이 런타임에 이를 강제 적용하는 방식으로, OpenAI·NVIDIA·Manus 등이 첫 출시 파트너로 참여했다. GitHub Copilot CLI의 경량 프로세스 격리부터 완전한 마이크로 VM까지 다양한 격리 수준을 지원하며, 에이전트의 모든 행동이 Entra 신원에 귀속되어 감사·추적이 가능해진다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">VentureBeat / Windows Developer Blog</span>
+          <a class="card-link" href="https://venturebeat.com/security/microsoft-launches-mxc-an-os-level-sandbox-for-ai-agents-with-openai-and-nvidia-already-on-board" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-model">자체 모델</span>
+        <div class="card-title">Microsoft, 자체 AI 모델 7종 발표 — MAI-Thinking-1과 MAI-Code-1-Flash로 OpenAI 의존 탈피</div>
+        <div class="card-summary">Microsoft가 Build 2026에서 MAI(Microsoft AI) 브랜드로 7개의 독자 AI 모델을 공개하며 OpenAI에 대한 의존도 축소에 나섰다. MAI-Thinking-1은 35B 활성 파라미터 MoE 추론 모델로 AIME 2025에서 97.0%, SWE-bench Pro에서 53%를 달성했으며, 5B 파라미터 코딩 모델 MAI-Code-1-Flash는 VS Code·GitHub Copilot에 순차 배포 중이다. 두 모델 모두 제3자 모델 증류 없이 Microsoft 자체 데이터로 훈련됐으며, MAI-Thinking-1은 맹점 평가에서 Claude Sonnet 4.6을 앞질렀다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">CNBC / Neowin / TechTimes</span>
+          <a class="card-link" href="https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── Apple WWDC ── -->
+  <section class="source-section src-apple">
+    <div class="source-header">
+      <div class="source-icon">🍎</div>
+      <div class="source-name">Apple WWDC 2026</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-breaking">D-3 예고</span>
+        <div class="card-title">WWDC 2026 (6월 8~12일) — ChatGPT식 Siri 대개편·iOS 27·Google Gemini 파트너십 공개 예정</div>
+        <div class="card-summary">Apple의 세계 개발자 콘퍼런스(WWDC 2026)가 6월 8일(현지 시각 오전 10시) 기조연설로 막을 올리며 Siri의 대대적 AI 쇄신이 핵심 발표로 예고된다. 새 Siri는 ChatGPT·Claude처럼 텍스트·음성 대화를 통한 멀티스텝 작업 처리와 앱 간 연동 기능을 갖추며, Google Gemini 팀과 협력해 구축한 맞춤형 AI 모델이 대화형 기능을 뒷받침할 전망이다. iOS 27·iPadOS 27·macOS 27에 걸쳐 독립 Siri 앱과 대화 기록·유료 구독 티어도 함께 도입될 것으로 알려져 있다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">TechCrunch / Bloomberg / MacRumors</span>
+          <a class="card-link" href="https://techcrunch.com/2026/06/04/what-to-expect-from-wwdc-2026-siris-highly-anticipated-revamp-and-apple-intelligence-updates/" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── Google / Gemini ── -->
+  <section class="source-section src-google">
+    <div class="source-header">
+      <div class="source-icon">🔍</div>
+      <div class="source-name">Google / Gemini</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-model">모델 GA</span>
+        <div class="card-title">Gemini 3.5 Flash 정식 출시 — Gemini 3.1 Pro 대비 4배 빠르고 40% 저렴한 프론티어 모델</div>
+        <div class="card-summary">Google의 Gemini 3.5 Flash가 정식(GA) 출시되어 Gemini 앱·AI 모드 검색·개발자 API의 기본 모델로 전 세계에 배포됐다. 입력 $1.50/M·출력 $9.00/M 토큰으로 Gemini 3.1 Pro보다 40% 저렴하면서 에이전트·코딩 벤치마크에서 동급 최강 성능을 기록하며 4배 빠른 응답 속도를 제공한다. 후속 모델 Gemini 3.5 Pro는 이달 중 출시 예정으로, 순다르 피차이 CEO가 "6월 안에 드리겠다"고 공언한 상태다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">Google Blog / TechCrunch</span>
+          <a class="card-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── NVIDIA / 하드웨어 ── -->
+  <section class="source-section src-nvidia">
+    <div class="source-header">
+      <div class="source-icon">💚</div>
+      <div class="source-name">NVIDIA &amp; 하드웨어</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-hardware">하드웨어</span>
+        <div class="card-title">NVIDIA RTX Spark 슈퍼칩 공개 — Arm CPU 20코어·Blackwell GPU·128GB 통합 메모리로 에이전트 PC 시대 개막</div>
+        <div class="card-summary">NVIDIA가 Computex 2026에서 RTX Spark 슈퍼칩을 발표하며 AI 에이전트 시대에 최적화된 Windows on Arm 플랫폼을 선보였다. Arm CPU 최대 20코어와 Blackwell GPU(CUDA 코어 6,144개), 128GB LPDDR5X 통합 메모리를 NVLink C2C로 연결해 1000억 파라미터 모델을 로컬에서 실행할 수 있으며, 메모리 대역폭은 최대 300GB/s에 달한다. Dell·HP·Lenovo·ASUS·MSI 등 주요 OEM과 Microsoft Surface Ultra 노트북에 탑재되어 2026년 가을 출하될 예정이다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">Tom's Hardware / NVIDIA Newsroom</span>
+          <a class="card-link" href="https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── 오픈소스 / 중국 AI ── -->
+  <section class="source-section src-opensource">
+    <div class="source-header">
+      <div class="source-icon">🧬</div>
+      <div class="source-name">오픈소스 &amp; 중국 AI</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-model">오픈소스</span>
+        <div class="card-title">Alibaba Qwen3-Coder-Next 출시 — 800B 파라미터 보유, 활성화는 3B뿐인 초희소 MoE 코딩 모델</div>
+        <div class="card-summary">Alibaba Qwen 팀이 Qwen3-Coder-Next를 공개했다. 총 파라미터는 80B이지만 초희소(ultra-sparse) MoE 구조 덕분에 순전파(forward pass) 당 3B만 활성화되어 처리량이 전작 대비 10배 향상됐다. 80만 개의 검증 가능한 코딩 태스크를 포함한 대규모 '에이전트 훈련' 파이프라인으로 학습했으며, 주요 프로프라이어터리 로보틱스·코딩 모델과 대등한 성능을 로컬 배포 비용으로 제공한다. 오픈웨이트 방식으로 공개되어 기업과 개발자들이 자체 인프라에서 자유롭게 실행할 수 있다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">VentureBeat / GitHub</span>
+          <a class="card-link" href="https://venturebeat.com/technology/qwen3-coder-next-offers-vibe-coders-a-powerful-open-source-ultra-sparse" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-model">신규 모델</span>
+        <div class="card-title">Alibaba Qwen3.7-Plus 출시 — 이미지·비디오 이해하는 멀티모달 최강 에이전트 모델</div>
+        <div class="card-summary">Alibaba Cloud가 6월 2일 Qwen3.7-Plus를 Bailian 플랫폼에 출시했다. 이미지·동영상 입력을 지원하는 멀티모달 대형 언어 모델로, 심층 추론(Deep Reasoning)·도구 호출(Tool Invocation)·자율 반복 실행(Autonomous Iteration) 기능을 갖춘 에이전트 운영에 최적화됐다. 텍스트 전용 형제 모델 Qwen3.7-Max와 함께 제공되며, 오픈소스 AI 생태계에서 Alibaba의 다음 세대 멀티모달 에이전트 플랫폼 전략의 핵심을 차지한다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">MarkTechPost / TechNode</span>
+          <a class="card-link" href="https://www.marktechpost.com/2026/06/02/alibabas-qwen-team-launches-qwen3-7-plus-adding-vision-deep-reasoning-tool-invocation-and-autonomous-iteration-on-the-bailian-platform/" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── 기업 & 산업 ── -->
+  <section class="source-section src-enterprise">
+    <div class="source-header">
+      <div class="source-icon">📊</div>
+      <div class="source-name">기업 &amp; 산업 동향</div>
+      <div class="source-line"></div>
+    </div>
+    <div class="cards">
+
+      <div class="card highlight">
+        <span class="card-tag tag-enterprise">기업 조사</span>
+        <div class="card-title">KPMG 조사: 기업 32%가 AI 에이전트 스케일링 중 — 배포·확장 속도 예상보다 3배 빠르다</div>
+        <div class="card-summary">KPMG 2026년 1분기 AI 분기 조사에 따르면 32%의 조직이 현재 AI 에이전트를 배포·확장 중이고, 27%는 여러 에이전트를 오케스트레이션하는 단계에 도달했다. 기업들은 향후 1년간 평균 $1억 2,400만을 AI에 투자할 계획이며, 93%는 지금까지의 생성형 AI 투자가 경쟁 우위 강화에 기여했다고 평가했다. 기술 부문의 AI 에이전트 도입률은 80%로 전사 평균을 30%포인트 상회하며, 보안·감사 가능성(75%)과 데이터 준비도(97%)가 최대 도전 과제로 꼽혔다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">KPMG</span>
+          <a class="card-link" href="https://kpmg.com/us/en/media/news/q1-ai-pulse2026.html" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="card-tag tag-analysis">트렌드</span>
+        <div class="card-title">AI 코드가 인간을 추월하는 시대 — 기업 소프트웨어 개발 조직 재편 가속</div>
+        <div class="card-summary">2026년 중반을 기점으로 AI 생성 코드의 품질이 숙련된 인간 개발자 수준에 근접·도달했다는 업계 평가가 잇따르고 있으며, 연내 인간 기준을 초과할 것이라는 전망이 주류를 이루고 있다. 이에 따라 엔터프라이즈 소프트웨어 팀들은 코드 생성보다 AI 결과물 검증·테스트 자동화·거버넌스에 역량을 집중하는 방향으로 조직 구조를 재편하고 있다. Anthropic·GitHub·Google 등 주요 플레이어가 AI 코딩 도구 고도화 경쟁을 벌이며 개발자 생태계의 무게 중심이 급속히 이동하고 있다.</div>
+        <div class="card-footer">
+          <span class="card-source-label">VentureBeat / KPMG</span>
+          <a class="card-link" href="https://venturebeat.com/technology/four-ai-research-trends-enterprise-teams-should-watch-in-2026" target="_blank" rel="noopener">기사 읽기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  AI Daily Reporter &mdash; 2026년 6월 5일 &nbsp;|&nbsp;
+  <a href="../index.html">아카이브</a> &nbsp;|&nbsp;
+  Powered by Claude &amp; Web Search
+</footer>
+
+</body>
+</html>
