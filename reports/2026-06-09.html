@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 6월 9일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffd166;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 36px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 20px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; }
+    header h1 {
+      font-size: clamp(1.9rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      display: inline-block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 10px;
+      position: relative;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      max-width: 560px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .header-stats {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 24px;
+      position: relative;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .stat-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* ── Nav ── */
+    .nav-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+    }
+    .nav-link {
+      padding: 14px 16px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Main Layout ── */
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 56px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .source-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .source-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .source-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+    .story-count {
+      margin-left: auto;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+    .cards.cols-2 { grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow);
+      border-color: rgba(108,99,255,0.35);
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .card-tag {
+      flex-shrink: 0;
+      font-size: 0.66rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin-top: 3px;
+    }
+    .tag-purple { background: rgba(108,99,255,0.18); color: #a89fff; border: 1px solid rgba(108,99,255,0.3); }
+    .tag-teal   { background: rgba(0,212,170,0.15); color: var(--accent2); border: 1px solid rgba(0,212,170,0.3); }
+    .tag-red    { background: rgba(255,107,107,0.15); color: #ff8f8f; border: 1px solid rgba(255,107,107,0.3); }
+    .tag-yellow { background: rgba(255,209,102,0.15); color: #ffd166; border: 1px solid rgba(255,209,102,0.3); }
+    .tag-blue   { background: rgba(72,149,255,0.15); color: #7db8ff; border: 1px solid rgba(72,149,255,0.3); }
+    .tag-orange { background: rgba(255,150,70,0.15); color: #ffaa66; border: 1px solid rgba(255,150,70,0.3); }
+
+    .card-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .card-summary {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .card-summary strong {
+      color: #c8cadf;
+      font-weight: 600;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .card-source-label {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      background: var(--surface2);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+    .read-btn:hover {
+      background: rgba(108,99,255,0.18);
+      color: #a89fff;
+      border-color: rgba(108,99,255,0.4);
+    }
+    .read-btn::after { content: '→'; }
+
+    /* ── Featured card ── */
+    .card.featured {
+      border-color: rgba(0,212,170,0.3);
+      background: linear-gradient(135deg, #1a1d27 0%, #0e2420 100%);
+    }
+    .card.featured .card-title {
+      font-size: 1.05rem;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── Top stories ribbon ── */
+    .top-ribbon {
+      background: linear-gradient(90deg, rgba(108,99,255,0.1) 0%, rgba(0,212,170,0.07) 100%);
+      border: 1px solid rgba(108,99,255,0.2);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 48px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+    .ribbon-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-right: 8px;
+    }
+    .ribbon-pill {
+      font-size: 0.76rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--surface2);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Back button ── */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 36px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-btn:hover { color: var(--accent); border-color: rgba(108,99,255,0.4); }
+    .back-btn::before { content: '←'; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 700px) {
+      header { padding: 32px 16px 24px; }
+      main { padding: 28px 16px 60px; }
+      .cards.cols-2 { grid-template-columns: 1fr; }
+      .header-stats { gap: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">AI Daily Reporter</div>
+  <h1><span>AI 뉴스</span> 리포트</h1>
+  <div class="header-date">2026년 6월 9일 화요일</div>
+  <p>오늘의 주요 AI 뉴스를 수집·정리한 한국어 요약 리포트입니다.</p>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-num">14</div><div class="stat-label">기사</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">출처</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">논문</div></div>
+  </div>
+</header>
+
+<nav class="nav-bar">
+  <a class="nav-link active" href="#top">전체</a>
+  <a class="nav-link" href="#apple">Apple / WWDC</a>
+  <a class="nav-link" href="#compute">컴퓨트·인프라</a>
+  <a class="nav-link" href="#models">모델 릴리스</a>
+  <a class="nav-link" href="#enterprise">엔터프라이즈</a>
+  <a class="nav-link" href="#robotics">로보틱스</a>
+  <a class="nav-link" href="#research">연구·논문</a>
+  <a class="nav-link" href="#market">시장·경제</a>
+</nav>
+
+<main id="top">
+  <a class="back-btn" href="../index.html">리포트 목록</a>
+
+  <!-- Top picks ribbon -->
+  <div class="top-ribbon">
+    <span class="ribbon-label">오늘의 핵심</span>
+    <span class="ribbon-pill">Apple WWDC Siri AI</span>
+    <span class="ribbon-pill">Anthropic Colossus 확장</span>
+    <span class="ribbon-pill">NVIDIA DGX Station</span>
+    <span class="ribbon-pill">Claude Opus 4.8</span>
+    <span class="ribbon-pill">Mercury 2 확산 LLM</span>
+    <span class="ribbon-pill">MIT TR 오늘의 AI 5가지</span>
+  </div>
+
+  <!-- ══════════════════ SECTION 1: Apple / WWDC ══════════════════ -->
+  <section class="section" id="apple">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,209,102,0.12);border:1px solid rgba(255,209,102,0.25);">🍎</div>
+      <div>
+        <div class="source-name">Apple / WWDC 2026</div>
+        <div class="source-desc">TechCrunch · Business Standard · MacRumors · Apple Newsroom</div>
+      </div>
+      <span class="story-count">2개 기사</span>
+    </div>
+    <div class="cards cols-2">
+
+      <div class="card featured">
+        <div class="card-top">
+          <span class="card-tag tag-yellow">특집</span>
+          <div class="card-title">WWDC 2026: Apple, Google Gemini 기반 'Siri AI' 전면 공개 — 연 $10억 라이선스</div>
+        </div>
+        <div class="card-summary">
+          Apple은 WWDC 2026 기조연설에서 <strong>Siri AI</strong>를 공개하며, 클라우드 추론을 위해 구글과 연 약 <strong>10억 달러</strong>의 맞춤형 Gemini 라이선스 계약을 체결했음을 확인했다. 온디바이스 작업(음성·개인 컨텍스트)은 Apple Silicon 자체 모델로 처리하며, 복잡한 추론과 세계 지식은 Private Cloud Compute를 통해 Gemini 엔진으로 라우팅된다. iOS 27·iPadOS 27·macOS 27 등 '27' 시리즈 OS를 함께 발표했으며, Apple은 사상 처음으로 ChatGPT·Claude·Gemini를 경쟁자로 직접 언급하는 이례적인 발표를 했다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Business Standard · TechCrunch</span>
+          <a class="read-btn" href="https://www.business-standard.com/technology/tech-news/wwdc-2026-apple-unveils-siri-ai-gemini-powered-apple-intelligence-more-126060900042_1.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-yellow">모델</span>
+          <div class="card-title">Apple, 새 AI 아키텍처 공개 — Gemini 모델과 자체 온디바이스 LLM 혼합 전략</div>
+        </div>
+        <div class="card-summary">
+          MacRumors에 따르면 Apple은 WWDC 전날 <strong>새로운 AI 아키텍처</strong>를 사전 공개하며 두 가지 레이어를 명확히 했다. 경량 개인화 처리는 Apple이 자체 개발한 차세대 파운데이션 모델이 담당하고, 강화된 언어 이해·코드 생성·복잡한 질의는 구글의 <strong>약 1.2조 파라미터</strong> 맞춤 Gemini 모델이 담당한다. 사용자는 기존처럼 ChatGPT로의 쿼리 옵트인도 유지할 수 있다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">MacRumors</span>
+          <a class="read-btn" href="https://www.macrumors.com/2026/06/08/apple-reveals-new-ai-architecture/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION 2: Compute / Infrastructure ══════════════════ -->
+  <section class="section" id="compute">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(0,212,170,0.12);border:1px solid rgba(0,212,170,0.25);">⚡</div>
+      <div>
+        <div class="source-name">컴퓨트 & 인프라</div>
+        <div class="source-desc">Anthropic · Axios · CNBC · NVIDIA Newsroom · VentureBeat</div>
+      </div>
+      <span class="story-count">3개 기사</span>
+    </div>
+    <div class="cards cols-2">
+
+      <div class="card featured">
+        <div class="card-top">
+          <span class="card-tag tag-teal">인프라</span>
+          <div class="card-title">Anthropic, SpaceX xAI Colossus 2 확장 — 월 $12.5억, GPU 22만대 이상 확보</div>
+        </div>
+        <div class="card-summary">
+          Anthropic이 SpaceX·xAI와의 컴퓨트 계약을 테네시주 <strong>Colossus 2</strong> 시설까지 확대, <strong>300메가와트 이상</strong>·NVIDIA GPU 22만 대 이상에 접근하게 됐다. 월 지불액은 <strong>12.5억 달러</strong>로, 2029년 5월까지 총 450억 달러 이상이 xAI로 유입될 전망이다. Anthropic은 이 계약의 일환으로 궤도 AI 컴퓨트 시설(기가와트급) 공동 개발 의향도 밝혔다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Anthropic · Axios · TechCrunch</span>
+          <a class="read-btn" href="https://www.anthropic.com/news/higher-limits-spacex" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-teal">인프라</span>
+          <div class="card-title">Google도 SpaceX와 월 $9.2억 GPU 계약 — Gemini Enterprise 폭증 수요 대응</div>
+        </div>
+        <div class="card-summary">
+          CNBC에 따르면 구글이 SpaceX와 <strong>NVIDIA GPU 11만 대</strong> 규모 클라우드 서비스 계약을 체결했다. 월 9.2억 달러에 달하는 이 계약은 Gemini Enterprise 수요 급증에 대응하기 위한 브리지 캐퍼시티 확보 목적이며, 구글이 자체 인프라를 확장하는 동안 임시로 운영된다. Anthropic과의 잇따른 대규모 GPU 계약으로 SpaceX가 AI 컴퓨트 시장의 핵심 공급자로 부상했다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">CNBC · wccftech</span>
+          <a class="read-btn" href="https://wccftech.com/spacex-locks-google-into-a-920-million-per-month-compute-deal-after-anthropic-as-xai-abandons-colossus-1s-messy-gpu-mix/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-blue">하드웨어</span>
+          <div class="card-title">NVIDIA DGX Station for Windows — 조 단위 파라미터 AI를 데스크톱에서</div>
+        </div>
+        <div class="card-summary">
+          NVIDIA가 <strong>GB300 Grace Blackwell Ultra</strong> 데스크톱 슈퍼칩 기반 DGX Station for Windows를 발표했다. 748GB 코히어런트 메모리와 최대 20 페타플롭스 AI 성능을 탑재해 클라우드 없이 <strong>1조 파라미터</strong> 모델을 로컬에서 실행할 수 있다. ASUS·Dell·HP·MSI·Supermicro 등을 통해 올해 4분기 출시 예정이다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">NVIDIA Newsroom · VentureBeat</span>
+          <a class="read-btn" href="https://nvidianews.nvidia.com/news/nvidia-dgx-station-for-windows-puts-a-trillion-parameter-ai-supercomputer-on-every-enterprise-desk" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION 3: Model Releases ══════════════════ -->
+  <section class="section" id="models">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);">🤖</div>
+      <div>
+        <div class="source-name">모델 릴리스</div>
+        <div class="source-desc">Anthropic · Google · Inception · llm-stats.com</div>
+      </div>
+      <span class="story-count">3개 기사</span>
+    </div>
+    <div class="cards cols-2">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-purple">모델</span>
+          <div class="card-title">Claude Opus 4.8 — SWE-bench 88.6%, 병렬 서브에이전트 지원</div>
+        </div>
+        <div class="card-summary">
+          Anthropic의 <strong>Claude Opus 4.8</strong>이 SWE-bench Verified에서 <strong>88.6%</strong>, Terminal-Bench 2.1에서 74.6%를 기록하며 최상위 코딩 에이전트 성능을 입증했다. 병렬 서브에이전트 워크플로우와 2.5배 빠른 Fast Mode를 지원하며, 가격은 입력 $5·출력 $25 (1M 토큰)로 이전과 동일하다. 이미 대부분의 Anthropic 코딩 워크플로우에서 기본 모델로 전환됐다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Anthropic · llm-stats.com</span>
+          <a class="read-btn" href="https://www.anthropic.com/news" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-blue">모델</span>
+          <div class="card-title">Gemini 3.5 Flash 정식 출시 — 4배 빠른 속도, $1.50/$9 (1M 토큰)</div>
+        </div>
+        <div class="card-summary">
+          Google의 <strong>Gemini 3.5 Flash</strong>가 정식 출시됐다. 동급 모델 대비 4배 빠른 응답 속도와 100만 토큰 컨텍스트를 제공하며, Terminal-Bench 2.1에서 76.2%를 기록해 Gemini 3.1 Pro를 코딩·에이전트 분야에서 앞선다. 가격은 입력 $1.50·출력 $9 (1M 토큰)로 책정되어 대규모 에이전틱 워크플로우에 최적화됐다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Google · llm-stats.com</span>
+          <a class="read-btn" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-orange">모델</span>
+          <div class="card-title">Mercury 2 출시 — 확산 아키텍처로 초당 1,000+ 토큰 생성</div>
+        </div>
+        <div class="card-summary">
+          Inception이 <strong>Mercury 2</strong>를 공개했다. 트랜스포머 대신 확산(diffusion) 아키텍처를 채용해 토큰을 병렬로 생성하며 <strong>초당 1,000 토큰 이상</strong>의 속도를 달성했다. 에이전틱 루프와 실시간 음성 인터랙션 등 지연 민감 프로덕션 환경을 주요 타겟으로 하며, 기존 자기회귀 LLM의 속도 한계를 근본적으로 넘어서는 아키텍처적 전환으로 주목받고 있다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Inception · llm-stats.com</span>
+          <a class="read-btn" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION 4: Enterprise ══════════════════ -->
+  <section class="section" id="enterprise">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(72,149,255,0.12);border:1px solid rgba(72,149,255,0.25);">🏢</div>
+      <div>
+        <div class="source-name">엔터프라이즈 & 산업</div>
+        <div class="source-desc">VentureBeat · Microsoft · OpenAI · MIT Technology Review</div>
+      </div>
+      <span class="story-count">4개 기사</span>
+    </div>
+    <div class="cards cols-2">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-blue">엔터프라이즈</span>
+          <div class="card-title">Microsoft Copilot Wave 3 + Anthropic Claude — 멀티모델 M365, E7 $99/월 출시</div>
+        </div>
+        <div class="card-summary">
+          Microsoft는 <strong>Microsoft 365 Copilot Wave 3</strong>을 통해 Anthropic의 Claude를 멀티모델 Copilot 채팅에 통합했다. 새로운 <strong>Copilot Cowork</strong>는 M365 앱 전반에서 장기 멀티스텝 워크플로우를 자율 실행하며, Claude의 AI를 기반으로 구축됐다. 신규 라이선스 티어 <strong>M365 E7: The Frontier Suite</strong>($99/사용자/월)가 출시돼 E5·Copilot·Agent 365를 번들로 제공한다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Microsoft · VentureBeat · Fortune</span>
+          <a class="read-btn" href="https://venturebeat.com/orchestration/microsoft-announces-copilot-cowork-with-help-from-anthropic-a-cloud-powered" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-teal">바이오테크</span>
+          <div class="card-title">OpenAI, GPT-Rosalind 바이오디펜스 프로그램 출시 — Johns Hopkins·CEPI와 협력</div>
+        </div>
+        <div class="card-summary">
+          OpenAI가 <strong>Rosalind Biodefense</strong> 프로그램을 공개하며 GPT-Rosalind에 대한 검증된 공공보건·바이오디펜스 기관의 접근을 확대했다. Johns Hopkins 응용물리연구소의 단백질 공학 연구와 전염병예방혁신연합(CEPI)의 아웃브레이크 모델링 작업이 주요 협력 사례다. Amgen·Moderna·Thermo Fisher 등 상업 파트너십도 병행 진행 중이다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">OpenAI · Axios · Digital Health News</span>
+          <a class="read-btn" href="https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-red">분석</span>
+          <div class="card-title">Gartner: CIO 90% 이상, AI 가치 실현의 최대 걸림돌은 "비용 관리"</div>
+        </div>
+        <div class="card-summary">
+          Gartner 최신 설문에서 CIO의 <strong>90% 이상</strong>이 비용 관리가 AI에서 가치를 창출하는 데 가장 큰 제약이라고 답했다. AI 에이전트가 업무를 혁신할 것이라는 기대는 유지되고 있지만, 실제 구축 경험 속에서 환멸감이 커지고 있다는 경고도 함께 나왔다. Gartner는 2026년을 에이전틱 AI의 '거품 환멸기' 정점으로 진단했다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">VentureBeat · Gartner</span>
+          <a class="read-btn" href="https://venturebeat.com/ai/gartner-predicts-ai-agents-will-transform-work-but-disillusionment-is-growing" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-yellow">인사이트</span>
+          <div class="card-title">MIT Technology Review: "오늘 알아야 할 AI 5가지" — 2026년 6월 9일 특집</div>
+        </div>
+        <div class="card-summary">
+          MIT Technology Review가 <strong>6월 9일자 특집</strong>으로 'Five Things You Need to Know About AI'를 게재했다. 주요 내용은 ▲딥페이크가 선거와 여성 대상 범죄에 실제로 악용되는 현황 ▲의료 현장에서 AI 에이전트 채택률 68%(KPMG) ▲군사 챗봇이 타격 우선순위 결정을 지원하는 사례 ▲생성 AI가 사무직 업무의 '일상'으로 정착된 현실 등을 다룬다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">MIT Technology Review</span>
+          <a class="read-btn" href="https://www.technologyreview.com/2026/06/09/1138582/five-things-you-need-to-know-about-ai/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION 5: Robotics ══════════════════ -->
+  <section class="section" id="robotics">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,107,107,0.12);border:1px solid rgba(255,107,107,0.25);">🦾</div>
+      <div>
+        <div class="source-name">로보틱스 & 자율화</div>
+        <div class="source-desc">Boston Dynamics · Google DeepMind · IEEE Spectrum</div>
+      </div>
+      <span class="story-count">1개 기사</span>
+    </div>
+    <div class="cards">
+
+      <div class="card featured">
+        <div class="card-top">
+          <span class="card-tag tag-red">로보틱스</span>
+          <div class="card-title">Boston Dynamics + Google DeepMind: Spot에 Gemini Robotics-ER 1.6 탑재 — 산업 자율 점검</div>
+        </div>
+        <div class="card-summary">
+          Boston Dynamics가 Google DeepMind의 <strong>Gemini Robotics-ER 1.6</strong>을 Spot 로봇 개와 Orbit AI 시각 점검 플랫폼에 통합했다. 이제 Spot은 위험 잔해·누출 자율 감지, 복잡한 계기 및 시창(sight glass) 판독, 복잡한 환경에서 VLA(Vision-Language-Action) 모델 호출 등을 자율적으로 수행한다. Gemini Robotics-ER 1.6은 Gemini API와 Google AI Studio를 통해 개발자에게도 공개됐다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Boston Dynamics · IEEE Spectrum · The Robot Report</span>
+          <a class="read-btn" href="https://bostondynamics.com/blog/boston-dynamics-google-deepmind-form-new-ai-partnership/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION 6: Research / arXiv ══════════════════ -->
+  <section class="section" id="research">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(108,99,255,0.12);border:1px solid rgba(108,99,255,0.25);">📄</div>
+      <div>
+        <div class="source-name">연구 & 논문</div>
+        <div class="source-desc">arXiv cs.AI · arXiv cs.LG · VentureBeat</div>
+      </div>
+      <span class="story-count">2개 기사</span>
+    </div>
+    <div class="cards cols-2">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-purple">논문</span>
+          <div class="card-title">AXIOM: 검증 가능한 수학 추론을 위한 신경-기호 실행 아키텍처 [arXiv]</div>
+        </div>
+        <div class="card-summary">
+          arXiv 논문(2606.00671)은 <strong>AXIOM</strong>이라는 신뢰 우선(trust-first) 신경-기호 아키텍처를 제안한다. LLM은 비공식 문제를 좁은 스키마로 정규화하는 역할만 하고, 실제 추론과 검증은 결정론적 <strong>CAS(Computer Algebra System)</strong> 파이프라인이 담당한다. MATH 전 카테고리에서 우위를 보이며, 답을 내지 못할 때 '기권'을 1등급 출력으로 처리해 신뢰도를 높인 점이 특징이다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">arXiv · cs.AI</span>
+          <a class="read-btn" href="https://arxiv.org/html/2606.00671v1" target="_blank" rel="noopener">논문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-purple">인사이트</span>
+          <div class="card-title">엔터프라이즈 AI에서 RAG 시대의 종말 — 컴파일 단계 컨텍스트 아키텍처로 전환</div>
+        </div>
+        <div class="card-summary">
+          VentureBeat의 분석에 따르면 에이전틱 AI 워크플로우가 확산됨에 따라 단일 쿼리를 위해 설계된 <strong>RAG 파이프라인</strong>이 한계에 봉착하고 있다. 2026년 1분기 하이브리드 검색 의도가 3배 증가한 것이 그 신호다. 차세대 패러다임으로는 런타임이 아닌 <strong>컴파일 단계</strong>에 지식을 통합하는 컨텍스트 아키텍처가 제시되며, 이 방식이 에이전트 규모에서 발생하는 검색 갭을 근본적으로 해소한다는 주장이다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">VentureBeat</span>
+          <a class="read-btn" href="https://venturebeat.com/data/the-rag-era-is-ending-for-agentic-ai-a-new-compilation-stage-knowledge-layer-is-what-comes-next" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════ SECTION 7: Market / Economy ══════════════════ -->
+  <section class="section" id="market">
+    <div class="section-header">
+      <div class="source-icon" style="background:rgba(255,150,70,0.12);border:1px solid rgba(255,150,70,0.25);">📈</div>
+      <div>
+        <div class="source-name">시장 & 경제</div>
+        <div class="source-desc">Hacker News · Open Data Science · Reuters</div>
+      </div>
+      <span class="story-count">1개 기사</span>
+    </div>
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-top">
+          <span class="card-tag tag-orange">시장</span>
+          <div class="card-title">AI·칩 주식 $1.3조 증발 — 고용지표 쇼크와 Broadcom 전망 악화 직격</div>
+        </div>
+        <div class="card-summary">
+          AI 및 반도체 관련 주식이 단 하루에 <strong>약 1.3조 달러</strong> 시가총액이 사라지는 최악의 하루를 맞았다. 예상을 크게 웃돈 고용지표가 금리 인상 우려를 자극한 가운데, Broadcom의 실망스러운 매출 전망이 반도체 섹터 전반에 충격을 줬다. 이는 2020년 이후 반도체 업종 최대 단일일 하락으로 기록됐으며, AI 인프라 버블 우려가 재부상하고 있다.
+        </div>
+        <div class="card-footer">
+          <span class="card-source-label">Open Data Science · Hacker News 트렌드</span>
+          <a class="read-btn" href="https://opendatascience.com/in-case-you-missed-it-last-week-in-ai-week-of-june-1-7-2026/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>AI Daily Reporter &nbsp;·&nbsp; <a href="../index.html">← 리포트 목록</a> &nbsp;·&nbsp; <a href="https://github.com/bini5036/bini5036.github.io" target="_blank">GitHub 저장소</a></p>
+  <p style="margin-top:6px;font-size:0.75rem;">본 리포트는 Claude AI가 공개 뉴스 소스를 수집·요약하여 자동 생성합니다. 원문은 각 기사의 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
