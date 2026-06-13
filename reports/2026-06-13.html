@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 6월 13일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffb347;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 24px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      font-size: 1.1rem;
+      color: var(--accent2);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .header-stats {
+      display: inline-flex;
+      gap: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 28px;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .stat-label { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+
+    /* ── NAV ── */
+    .nav-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.85rem;
+    }
+    .nav-bar a { color: var(--accent); text-decoration: none; }
+    .nav-bar a:hover { text-decoration: underline; }
+    .nav-bar .sep { color: var(--border); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 52px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .section-icon.purple { background: rgba(108,99,255,0.18); border: 1px solid rgba(108,99,255,0.35); }
+    .section-icon.teal   { background: rgba(0,212,170,0.15);  border: 1px solid rgba(0,212,170,0.3); }
+    .section-icon.red    { background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); }
+    .section-icon.gold   { background: rgba(255,179,71,0.15);  border: 1px solid rgba(255,179,71,0.3); }
+    .section-icon.blue   { background: rgba(66,153,225,0.15);  border: 1px solid rgba(66,153,225,0.3); }
+    .section-title-text h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section-title-text p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── CARDS ── */
+    .card-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      border-color: rgba(108,99,255,0.4);
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .card-number {
+      min-width: 28px; height: 28px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .card-summary {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      padding-left: 40px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 40px;
+      margin-top: 4px;
+    }
+    .source-tag {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.35);
+      color: #a89fff;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .read-btn:hover {
+      background: rgba(108,99,255,0.25);
+      border-color: rgba(108,99,255,0.6);
+      color: #c5beff;
+    }
+    .read-btn::after { content: '→'; }
+
+    /* highlight variants */
+    .card.highlight-teal { border-color: rgba(0,212,170,0.3); background: linear-gradient(135deg, #1a1d27 0%, #0d2420 100%); }
+    .card.highlight-teal .card-number { background: rgba(0,212,170,0.12); border-color: rgba(0,212,170,0.3); color: var(--accent2); }
+    .card.highlight-teal .read-btn { background: rgba(0,212,170,0.1); border-color: rgba(0,212,170,0.3); color: var(--accent2); }
+    .card.highlight-teal .read-btn:hover { background: rgba(0,212,170,0.2); }
+    .card.highlight-teal:hover { border-color: rgba(0,212,170,0.55); }
+
+    .card.highlight-red { border-color: rgba(255,107,107,0.25); }
+    .card.highlight-red .card-number { background: rgba(255,107,107,0.1); border-color: rgba(255,107,107,0.25); color: var(--accent3); }
+
+    .card.highlight-gold { border-color: rgba(255,179,71,0.25); }
+    .card.highlight-gold .card-number { background: rgba(255,179,71,0.1); border-color: rgba(255,179,71,0.25); color: var(--accent4); }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      header { padding: 36px 16px 28px; }
+      .header-stats { flex-wrap: wrap; gap: 16px; padding: 12px 20px; }
+      main { padding: 28px 16px 60px; }
+      .card { padding: 18px 16px; }
+      .card-summary, .card-footer { padding-left: 0; }
+      .card-top { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">AI Daily Reporter</div>
+  <h1><span>AI 뉴스</span> 리포트</h1>
+  <div class="header-date">2026년 6월 13일 토요일</div>
+  <p>오늘의 주요 인공지능 뉴스를 엄선하여 한국어로 요약합니다.</p>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">주요 기사</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">출처</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">카테고리</div></div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <a href="../index.html">← 아카이브</a>
+  <span class="sep">|</span>
+  <span style="color:var(--text-muted)">2026-06-13</span>
+</div>
+
+<main>
+
+  <!-- ── 섹션 1: 시장 & 기업 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon purple">🏦</div>
+      <div class="section-title-text">
+        <h2>시장 &amp; 기업 동향</h2>
+        <p>IPO, 투자, 기업 전략 — 오늘의 빅 무버</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card highlight-teal">
+        <div class="card-top">
+          <div class="card-number">01</div>
+          <div class="card-title">SpaceX, 나스닥 데뷔 첫날 19% 급등 — 역대 최대 $750억 IPO 화제</div>
+        </div>
+        <div class="card-summary">
+          SpaceX가 6월 12일 나스닥(SPCX)에 상장, 공모가 $135에서 19% 오른 $161로 마감하며 역사상 최대 규모의 IPO를 완성했습니다. 지난 2월 xAI와의 합병 이후 SpaceX는 Grok AI 플랫폼과 AI 컴퓨트 인프라를 핵심 사업으로 편입했으며, 기업 가치는 약 $1.77조(약 2경 4,000조 원)에 달합니다. 이번 상장은 Anthropic·OpenAI의 IPO 계획에도 영향을 줄 AI 인프라 밸류에이션의 새로운 기준점이 될 전망입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">CNBC / NPR</span>
+          <a class="read-btn" href="https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">02</div>
+          <div class="card-title">Anthropic, 연매출 $300억 돌파 — Claude Code가 OpenAI 추월 견인</div>
+        </div>
+        <div class="card-summary">
+          Ramp AI 인덱스 6월 최신치에 따르면 Anthropic은 미국 기업 AI 유료 구독의 41%를 점유, OpenAI(32.3%)를 9%p 차로 앞섰습니다. 이 역전은 주로 Claude Code의 폭발적 수요 덕분이며, 연간 반복 매출(ARR)은 2025년 말 $90억에서 현재 $300억을 넘어섰습니다. 전년 동기 8% 미만이던 Anthropic 점유율이 12개월 만에 5배 이상 성장한 셈입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Ramp / VentureBeat</span>
+          <a class="read-btn" href="https://venturebeat.com/technology/anthropic-finally-beat-openai-in-business-ai-adoption-but-3-big-threats-could-erase-its-lead" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card highlight-gold">
+        <div class="card-top">
+          <div class="card-number">03</div>
+          <div class="card-title">EngineAI, 홍콩 증시 IPO 신청 — T800 휴머노이드 로봇 공장 가동 중</div>
+        </div>
+        <div class="card-summary">
+          중국 심천의 로봇 스타트업 EngineAI가 홍콩 IPO를 기밀 방식으로 신청했다고 블룸버그가 보도했습니다. 창업 3년차인 이 회사는 4월 시리즈B에서 $2억을 조달해 기업가치 100억 위안(약 1조 8,000억 원)을 인정받았으며, 6월 1일 개설한 1만 2,000㎡ 공장에서 T800 휴머노이드 로봇 첫 양산을 시작했습니다. Unitree·Agibot 등 중국 로봇 기업의 IPO 러시가 이어지면서 글로벌 휴머노이드 로봇 시장의 상장 경쟁이 본격화되고 있습니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Bloomberg / The Next Web</span>
+          <a class="read-btn" href="https://thenextweb.com/news/engineai-hong-kong-ipo-humanoid-robots" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">04</div>
+          <div class="card-title">Recursive Superintelligence, NVIDIA·GV 주도로 $6.5억 투자 유치</div>
+        </div>
+        <div class="card-summary">
+          자기개선형 AI 연구를 목표로 하는 영국·미국 스타트업 Recursive Superintelligence가 NVIDIA·GV(구글 벤처스) 주도의 투자라운드에서 $6.5억(약 9,000억 원)을 조달하며 기업가치 $46.5억을 인정받았습니다. OpenAI·DeepMind·Meta AI 출신 연구자들이 설립한 이 회사는 AI가 스스로 아키텍처·훈련 방법·연구 방향을 개선하는 '레벨 1' 자율 훈련 시스템을 올해 가동할 계획입니다. 공개 출시는 2026년 중반을 목표로 합니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">SiliconANGLE / TechFundingNews</span>
+          <a class="read-btn" href="https://siliconangle.com/2026/05/13/recursive-superintelligence-raises-650m-build-self-improving-ai-models/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 섹션 2: 모델 & 제품 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon teal">🤖</div>
+      <div class="section-title-text">
+        <h2>모델 &amp; 제품 출시</h2>
+        <p>최신 AI 모델 업데이트와 제품 발표</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card highlight-teal">
+        <div class="card-top">
+          <div class="card-number">05</div>
+          <div class="card-title">Claude Opus 4.8, 기본 100만 토큰 컨텍스트로 벤치마크 1위 등극</div>
+        </div>
+        <div class="card-summary">
+          Anthropic이 5월 28일 출시한 Claude Opus 4.8은 API·Amazon Bedrock·Vertex AI에서 100만 토큰 컨텍스트 창을 추가 요금 없이 기본 제공하며 Artificial Analysis 지능 지수 1위(61점)를 차지, GPT-5.5(59점)를 처음으로 앞질렀습니다. 가격은 Opus 4.7과 동일한 입력 $5·출력 $25(백만 토큰 기준)를 유지하면서 최대 출력 토큰은 12만 8,000으로 늘었습니다. Claude Code에는 다중 서브에이전트를 병렬 실행·통합하는 Workflows 기능도 추가됐습니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Anthropic</span>
+          <a class="read-btn" href="https://www.anthropic.com/news/claude-opus-4-8" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card highlight-red">
+        <div class="card-top">
+          <div class="card-number">06</div>
+          <div class="card-title">GPT-5.6 "Kindle-Alpha" 체크포인트 유출 — 150만 토큰 컨텍스트 보고</div>
+        </div>
+        <div class="card-summary">
+          6월 3일 Codex 관련 테스트 경로를 통해 GPT-5.6 "kindle-alpha"(내부 코드명 iris-alpha) 체크포인트가 개발자 채널에 유출됐습니다. 커뮤니티에서는 150만 토큰 컨텍스트 창, 향상된 추론·코딩 능력, 더 깔끔한 UI 생성 능력이 보고됐으나 OpenAI는 공식 확인을 거부했습니다. 이 유출은 정식 릴리스가 아닌 실험 단계의 스냅샷으로, 개발 완료 여부는 불확실합니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Windows Forum / WaveSpeed</span>
+          <a class="read-btn" href="https://windowsforum.com/threads/gpt-5-6-kindle-alpha-leak-early-reports-on-reasoning-coding-and-vision.423497/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 섹션 3: AI 기술 연구 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon blue">🔬</div>
+      <div class="section-title-text">
+        <h2>AI 기술 &amp; 연구</h2>
+        <p>최신 알고리즘, 논문, 과학적 성과</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">07</div>
+          <div class="card-title">Google TurboQuant, LLM KV 캐시 메모리 6배 절감 — H100서 8배 성능 향상</div>
+        </div>
+        <div class="card-summary">
+          Google 연구진이 공개한 TurboQuant는 트랜스포머의 핵심 병목인 KV 캐시를 약 3비트로 벡터 양자화해 메모리를 최소 6배 줄이는 알고리즘입니다. NVIDIA H100 GPU 벤치마크에서 어텐션 로짓 연산이 최대 8배 빠르며, Llama-3.1-8B-Instruct 등 기존 사전학습 모델에 재훈련 없이 즉시 적용 가능합니다. 이 기술은 긴 컨텍스트 AI를 저사양 하드웨어에서 실행하는 비용 혁신을 예고합니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Google Research / Tom's Hardware</span>
+          <a class="read-btn" href="https://research.google/blog/turboquant-redefining-ai-efficiency-with-extreme-compression/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">08</div>
+          <div class="card-title">Penn 공대, '몰리파이어 레이어'로 역함수 편미분방정식 AI 풀이 혁신</div>
+        </div>
+        <div class="card-summary">
+          펜실베이니아대학교 공학부 연구팀이 신경망에 수학적 평활화 함수(몰리파이어)를 통합한 새로운 레이어를 개발했습니다. 이 기법은 기존 자동미분(autodiff) 대신 컨볼루션 연산으로 고차 미분을 계산, 노이즈가 많은 데이터에서도 안정적이고 메모리 효율적으로 역함수 PDE를 풀 수 있게 해줍니다. 유전체학·기후 모델링·재료과학 등 다양한 과학 분야에 응용 가능하며, NeurIPS 2026 및 『Transactions on Machine Learning Research』에 발표 예정입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">arXiv / ScienceDaily</span>
+          <a class="read-btn" href="https://arxiv.org/abs/2505.11682" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card highlight-teal">
+        <div class="card-top">
+          <div class="card-number">09</div>
+          <div class="card-title">UC샌디에이고·Allen AI, 기후 시뮬레이션 AI 25배 가속 — 슈퍼컴 탈피</div>
+        </div>
+        <div class="card-summary">
+          UC샌디에이고와 Allen Institute for AI 연구팀이 개발한 'Spherical DYffusion'은 생성형 AI와 물리 기반 데이터를 결합해 100년치 기후 패턴을 기존 모델 대비 25배 빠르게 시뮬레이션합니다. 종전에는 슈퍼컴퓨터 수주일이 걸리던 시뮬레이션을 연구실 GPU 클러스터로 25시간 만에 처리할 수 있습니다. 다음 단계는 대기의 CO₂ 반응 모델링이며, AI를 통한 기후 과학의 민주화가 가속화될 전망입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">UC San Diego / Technology Networks</span>
+          <a class="read-btn" href="https://today.ucsd.edu/story/accelerating-climate-modeling-with-generative-ai" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 섹션 4: 산업 & 경쟁 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon red">⚔️</div>
+      <div class="section-title-text">
+        <h2>산업 경쟁 &amp; 전략</h2>
+        <p>AI 코딩 전쟁, 기업 전략, 내부 동향</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">10</div>
+          <div class="card-title">Microsoft, 6월 30일부로 Claude Code 내부 사용 종료 — Copilot CLI 전면 전환</div>
+        </div>
+        <div class="card-summary">
+          마이크로소프트가 Experiences &amp; Devices 사업부 내 Claude Code 라이선스를 6월 30일(회계연도 말) 일괄 종료하고 GitHub Copilot CLI로 전환하기로 했습니다. 2025년 12월 도입 후 불과 6개월 만에 내부 AI 코딩 도구를 교체하는 것으로, 전략적 표준화와 자사 제품 육성이 목적입니다. 이 결정은 Copilot CLI의 실제 역량이 Claude Code와 경쟁할 수 있는지 개발자 사회의 주목을 받고 있습니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Windows Forum / developer-tech.com</span>
+          <a class="read-btn" href="https://developer-tech.com/news/microsoft-claude-code-github-copilot-cli/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">11</div>
+          <div class="card-title">Microsoft·Google, AI 코딩 모델로 Anthropic·OpenAI에 정면 도전</div>
+        </div>
+        <div class="card-summary">
+          Microsoft는 Build 2026에서 GitHub Copilot 강화를 위한 자체 코딩 특화 모델을 공개하며 Claude Code·ChatGPT Codex와의 경쟁을 선언했습니다. Google의 Sundar Pichai도 "에이전틱 코딩에서 우리는 다소 뒤처져 있다"고 인정하면서 추격 로드맵을 제시했습니다. AI 코딩 도구 시장이 폭발적으로 성장하는 가운데 빅테크 전체가 이 분야에 자원을 집중하는 양상입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">CNBC</span>
+          <a class="read-btn" href="https://www.cnbc.com/2026/06/01/microsoft-and-google-take-on-anthropic-and-openai-in-ai-coding-models.html" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">12</div>
+          <div class="card-title">Coralogix, AI 에이전트 모니터링 수요 베팅 — $2억 시리즈D 조달</div>
+        </div>
+        <div class="card-summary">
+          AI 에이전트가 소프트웨어 시스템에 깊숙이 침투하면서, 이를 모니터링·디버깅하는 도구의 수요도 급증하고 있습니다. 소프트웨어 모니터링 스타트업 Coralogix는 Advent·CPPIB 주도의 시리즈D에서 $2억을 조달하며 기업가치 $16억을 인정받았습니다. "에이전트 시대의 관측 가능성(observability) 레이어"를 구축하는 것이 이번 투자의 핵심 논거입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">TechCrunch</span>
+          <a class="read-btn" href="https://techcrunch.com/2026/06/03/coralogix-raises-200m-in-race-to-build-the-monitoring-layer-for-ai-agents/" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 섹션 5: 모델 경쟁 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon gold">📊</div>
+      <div class="section-title-text">
+        <h2>모델 경쟁 지형</h2>
+        <p>주요 AI 모델 현황과 벤치마크</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card highlight-gold">
+        <div class="card-top">
+          <div class="card-number">13</div>
+          <div class="card-title">2026년 6월 AI 모델 지형도 — Claude Opus 4.8 1위, GPT-5.5 2위</div>
+        </div>
+        <div class="card-summary">
+          현재 Artificial Analysis 지능 지수 기준으로 Claude Opus 4.8(61점)이 1위, GPT-5.5(59점)가 2위, Gemini 3.1 Pro(57점)가 3위를 기록하고 있습니다. Google CEO 피차이가 "에이전틱 코딩에서 뒤처져 있다"고 공인한 가운데, Grok 4.3 Beta·xAI도 추격에 나서고 있습니다. 이 순위는 기업 구독 데이터(Ramp)·성능 벤치마크·컨텍스트 길이 등 복합 지표를 반영하며, 모델 교체 주기는 분기에서 월 단위로 빨라지는 추세입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Artificial Analysis / llm-stats.com</span>
+          <a class="read-btn" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">원문 보기</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>AI Daily Reporter &nbsp;·&nbsp; <a href="../index.html">← 아카이브로 돌아가기</a> &nbsp;·&nbsp; <a href="https://github.com/bini5036/bini5036.github.io" target="_blank" rel="noopener">GitHub 저장소</a></p>
+  <p style="margin-top:6px;font-size:0.75rem;">본 리포트는 Claude AI가 자동 수집·생성합니다. 원문은 각 기사의 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
