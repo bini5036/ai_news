@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 뉴스 리포트 — 2026년 6월 14일</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --accent: #6c63ff;
+      --accent2: #00d4aa;
+      --accent3: #ff6b6b;
+      --accent4: #ffb347;
+      --text: #e8eaf6;
+      --text-muted: #8b90a7;
+      --border: #2e3250;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #0d0f1a 0%, #1a1040 50%, #0a1628 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(108,99,255,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(108,99,255,0.15);
+      border: 1px solid rgba(108,99,255,0.4);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a89fff;
+      margin-bottom: 24px;
+    }
+    .header-badge::before { content: '●'; color: var(--accent2); font-size: 0.6em; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: var(--accent); }
+    .header-date {
+      font-size: 1.1rem;
+      color: var(--accent2);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 560px;
+      margin: 0 auto 28px;
+    }
+    .header-stats {
+      display: inline-flex;
+      gap: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 28px;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 1.5rem; font-weight: 700; color: #fff; }
+    .stat-label { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+
+    /* ── NAV ── */
+    .nav-bar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.85rem;
+    }
+    .nav-bar a { color: var(--accent); text-decoration: none; }
+    .nav-bar a:hover { text-decoration: underline; }
+    .nav-bar .sep { color: var(--border); }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── SECTION ── */
+    .section {
+      margin-bottom: 52px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .section-icon.purple { background: rgba(108,99,255,0.18); border: 1px solid rgba(108,99,255,0.35); }
+    .section-icon.teal   { background: rgba(0,212,170,0.15);  border: 1px solid rgba(0,212,170,0.3); }
+    .section-icon.red    { background: rgba(255,107,107,0.15); border: 1px solid rgba(255,107,107,0.3); }
+    .section-icon.gold   { background: rgba(255,179,71,0.15);  border: 1px solid rgba(255,179,71,0.3); }
+    .section-icon.blue   { background: rgba(66,153,225,0.15);  border: 1px solid rgba(66,153,225,0.3); }
+    .section-icon.green  { background: rgba(72,199,142,0.15);  border: 1px solid rgba(72,199,142,0.3); }
+    .section-title-text h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .section-title-text p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── CARDS ── */
+    .card-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      border-color: rgba(108,99,255,0.4);
+    }
+    .card.highlight {
+      border-color: rgba(255,107,107,0.35);
+      background: linear-gradient(135deg, #1a1d27 0%, #1f1520 100%);
+    }
+    .card.highlight:hover { border-color: rgba(255,107,107,0.6); }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .card-number {
+      min-width: 28px; height: 28px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .card-number.hot {
+      background: rgba(255,107,107,0.15);
+      border-color: rgba(255,107,107,0.4);
+      color: var(--accent3);
+    }
+    .card-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    .card-summary {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      padding-left: 40px;
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 40px;
+      margin-top: 4px;
+    }
+    .source-tag {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      background: var(--surface2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+    }
+    .read-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(108,99,255,0.12);
+      border: 1px solid rgba(108,99,255,0.35);
+      color: #a89fff;
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .read-btn:hover {
+      background: rgba(108,99,255,0.25);
+      border-color: rgba(108,99,255,0.6);
+    }
+    .read-btn.teal {
+      background: rgba(0,212,170,0.1);
+      border-color: rgba(0,212,170,0.3);
+      color: var(--accent2);
+    }
+    .read-btn.teal:hover {
+      background: rgba(0,212,170,0.2);
+      border-color: rgba(0,212,170,0.55);
+    }
+    .read-btn.red {
+      background: rgba(255,107,107,0.1);
+      border-color: rgba(255,107,107,0.3);
+      color: var(--accent3);
+    }
+    .read-btn.red:hover {
+      background: rgba(255,107,107,0.2);
+      border-color: rgba(255,107,107,0.55);
+    }
+    .read-btn.gold {
+      background: rgba(255,179,71,0.1);
+      border-color: rgba(255,179,71,0.3);
+      color: var(--accent4);
+    }
+    .read-btn.gold:hover {
+      background: rgba(255,179,71,0.2);
+      border-color: rgba(255,179,71,0.55);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 640px) {
+      header { padding: 40px 16px 32px; }
+      .header-stats { gap: 16px; padding: 12px 20px; }
+      main { padding: 32px 16px 60px; }
+      .card { padding: 18px; }
+      .card-summary, .card-footer { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">AI Daily Reporter &nbsp;·&nbsp; 자동 생성 리포트</div>
+  <h1><span>AI 뉴스</span> 데일리 리포트</h1>
+  <div class="header-date">2026년 6월 14일 (일)</div>
+  <p>Hacker News · ArXiv · VentureBeat · TechCrunch · The Verge · MIT Tech Review 등에서 선별한 오늘의 주요 AI 뉴스</p>
+  <div class="header-stats">
+    <div class="stat"><div class="stat-num">13</div><div class="stat-label">기사</div></div>
+    <div class="stat"><div class="stat-num">7</div><div class="stat-label">출처</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">카테고리</div></div>
+  </div>
+</header>
+
+<div class="nav-bar">
+  <a href="../index.html">← 아카이브</a>
+  <span class="sep">|</span>
+  <span style="color:var(--text-muted)">2026년 6월 14일 리포트</span>
+</div>
+
+<main>
+
+  <!-- ── SECTION 1: 정책 & 규제 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon red">⚖️</div>
+      <div class="section-title-text">
+        <h2>정책 · 규제 · 안전</h2>
+        <p>Government · Policy · Safety</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card highlight">
+        <div class="card-top">
+          <div class="card-number hot">01</div>
+          <div class="card-title">미국 정부, Anthropic의 Claude Fable 5·Mythos 5 전 세계 접근 즉시 차단 명령</div>
+        </div>
+        <div class="card-summary">
+          미국 정부가 국가안보를 이유로 Anthropic의 최신 모델 Claude Fable 5와 Mythos 5에 대한 전 세계 모든 접근을 즉각 차단하도록 명령했습니다. Anthropic은 이를 '오해'라고 반박하며, 같은 기준이 업계에 동일하게 적용된다면 모든 프런티어 모델의 출시가 사실상 중단될 것이라고 경고했습니다. 이번 조치는 Anthropic이 자사 AI가 너무 강력해져 통제 불가능해질 수 있다고 공개 경고한 직후 나온 것으로, 안전 경고가 역효과를 낳은 아이러니한 상황입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">TechCrunch</span>
+          <a class="read-btn red" href="https://techcrunch.com/2026/06/12/anthropics-safety-warnings-may-have-just-backfired-the-government-has-pulled-the-plug-on-its-most-powerful-ai/" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">02</div>
+          <div class="card-title">AI CEO 연합, 美 의회에 합성 DNA 의무 심사법 제정 촉구 — 생물무기 위험 경고</div>
+        </div>
+        <div class="card-summary">
+          OpenAI 샘 알트먼, Anthropic 다리오 아모데이, Google DeepMind 데미스 하사비스, Microsoft AI 무스타파 술레이만 등 주요 AI 기업 CEO들이 6월 5일 미국 의회에 합성 DNA 공급업체 의무 심사를 요구하는 공동 서한을 발송했습니다. AI의 급속한 발전이 생물학적 무기 제조에 필요한 기술적 장벽을 낮추고 있다는 경고와 함께, 초당파적 생명안보현대화혁신법(S.3741) 제정을 요청했습니다. Meta 수석 AI 책임자 알렉산드르 왕과 노벨상 수상자 데이비드 베이커 등도 공동 서명에 참여했습니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Fortune</span>
+          <a class="read-btn" href="https://fortune.com/2026/06/05/openai-anthropic-microsoft-ceos-congress-bioweapon-safeguards/" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">03</div>
+          <div class="card-title">콜로라도 AI 소비자보호법 6월 30일 시행 · EU AI법 8월 2일 적용 — 글로벌 AI 규제 원년</div>
+        </div>
+        <div class="card-summary">
+          미국 콜로라도주의 인공지능 소비자보호법이 6월 30일부터 시행되어, 고위험 AI를 사용하는 기업에 리스크 관리 프로그램 수립·연간 영향 평가·사용자 공개 의무를 부과합니다. 이와 함께 세계 최초의 포괄적 AI 규제인 EU AI법도 8월 2일부터 고용·교육·핵심 인프라 등 주요 분야에 전면 적용됩니다. 두 규제의 동시 발효로 2026년은 AI 규제 원년으로 기록될 전망입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Radical Data Science</span>
+          <a class="read-btn" href="https://radicaldatascience.wordpress.com/2026/06/04/ai-news-briefs-bulletin-board-for-june-2026/" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: 모델 출시 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon purple">🚀</div>
+      <div class="section-title-text">
+        <h2>모델 출시 · 오픈소스</h2>
+        <p>Model Releases · Open Source</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">04</div>
+          <div class="card-title">NVIDIA Nemotron 3 Ultra 550B 공개 — 미국産 오픈웨이트 최강 모델</div>
+        </div>
+        <div class="card-summary">
+          NVIDIA가 Computex 2026에서 550B 파라미터(55B 활성화) 혼합 전문가(MoE) 하이브리드 Mamba-트랜스포머 모델 Nemotron 3 Ultra를 출시했습니다. 100만 토큰 컨텍스트를 지원하며 기존 대비 5배 빠른 추론 속도와 30% 비용 절감을 달성, 인공지능 분석 플랫폼 Artificial Analysis의 Intelligence Index에서 미국 연구소 오픈 모델 중 1위(48점)를 기록했습니다. NVIDIA Open Model License 하에 허깅페이스·오픈라우터·NVIDIA NIM에서 상업적 이용이 가능합니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">MarkTechPost</span>
+          <a class="read-btn" href="https://www.marktechpost.com/2026/06/04/nvidia-ai-releases-nemotron-3-ultra-an-open-550b-mixture-of-experts-hybrid-mamba-transformer-for-long-running-agents/" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">05</div>
+          <div class="card-title">Google Gemma 4 12B 출시 — 16GB 노트북서 멀티모달 AI 구동, Apache 2.0 무료 공개</div>
+        </div>
+        <div class="card-summary">
+          Google이 6월 3일 16GB RAM 노트북에서 로컬 실행 가능한 오픈소스 멀티모달 모델 Gemma 4 12B를 출시했습니다. 텍스트·이미지·오디오를 단일 파이프라인에서 처리하는 인코더 없는 통합 아키텍처를 채택해 26B 파라미터 모델 수준의 성능을 발휘합니다. Apache 2.0 라이선스로 완전 무료 제공되며, 허깅페이스·캐글에서 즉시 다운로드 가능하고 vLLM·llama.cpp·MLX 등 주요 프레임워크에서 지원됩니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">VentureBeat</span>
+          <a class="read-btn teal" href="https://venturebeat.com/technology/googles-new-open-source-gemma-4-12b-analyzes-audio-video-and-runs-entirely-locally-on-a-typical-16gb-enterprise-laptop" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">06</div>
+          <div class="card-title">Moonshot AI, Kimi K2.7-Code 오픈소스 공개 — 1조 파라미터 코딩 특화 모델</div>
+        </div>
+        <div class="card-summary">
+          중국 AI 스타트업 Moonshot AI가 6월 12일 1조 파라미터(32B 활성화, 384 전문가) 규모의 코딩 특화 오픈소스 모델 Kimi K2.7-Code를 허깅페이스에 공개했습니다. 자체 벤치마크 Kimi Code Bench v2에서 전작 K2.6 대비 21.8% 향상됐으며, 256K 토큰 컨텍스트와 30% 낮은 추론 토큰 사용량을 자랑합니다. Modified MIT 라이선스로 상업적 활용이 가능하며, API 가격은 입력 $0.95/백만 토큰입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">MarkTechPost</span>
+          <a class="read-btn" href="https://www.marktechpost.com/2026/06/12/moonshot-ai-releases-kimi-k2-7-code-a-coding-model-reporting-21-8-on-kimi-code-bench-v2-over-k2-6/" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">07</div>
+          <div class="card-title">Claude Sonnet 4.6, claude.ai 기본 모델 채택 — Opus 4.5 대비 59% 선호</div>
+        </div>
+        <div class="card-summary">
+          Anthropic의 Claude Sonnet 4.6이 claude.ai 플랫폼의 새로운 기본 모델로 채택됐습니다. 실사용자 선호도 평가에서 기존 기본 모델이었던 Opus 4.5 대비 59% 더 높은 선호도를 기록했으며, 100만 토큰 컨텍스트 윈도우와 입력 $3/출력 $15(백만 토큰) 가격으로 비용 효율성도 크게 개선됐습니다. 이번 전환은 모델 성능과 경제성을 동시에 고려한 전략적 선택으로 평가됩니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">LLM Stats</span>
+          <a class="read-btn" href="https://llm-stats.com/ai-news" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: 연구 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon blue">🔬</div>
+      <div class="section-title-text">
+        <h2>연구 · 기술</h2>
+        <p>Research · Technology</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">08</div>
+          <div class="card-title">AI, 고전적 주의력 테스트 '스트룹 과제'에서 대규모 실패 — PNAS Nexus 게재</div>
+        </div>
+        <div class="card-summary">
+          PNAS Nexus에 발표된 연구에서 최신 대형 언어 모델들이 심리학의 고전 주의력 테스트(스트룹 과제)에서 심각한 한계를 드러냈습니다. GPT-4o는 5개 단어에서 91% 정확도를 기록했지만 40개 단어에서 15%로 폭락했고, Claude 3.5 Sonnet도 40개 단어에서 24%까지 떨어졌으며, GPT-5·Claude Opus 4.1·Gemini 2.5 모두 유사한 패턴을 보였습니다. 이는 트랜스포머 기반 LLM의 주의력 메커니즘이 길이가 늘어날수록 근본적으로 무너지는 구조적 한계를 드러낸 것입니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">ScienceDaily / PNAS Nexus</span>
+          <a class="read-btn" href="https://www.sciencedaily.com/releases/2026/06/260610003049.htm" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">09</div>
+          <div class="card-title">Google TurboQuant, KV 캐시 메모리 최대 6배 절감 — ICLR 2026 공개</div>
+        </div>
+        <div class="card-summary">
+          Google 연구팀이 ICLR 2026에서 대형 언어 모델의 핵심 병목인 KV(Key-Value) 캐시 메모리 오버헤드를 획기적으로 줄이는 알고리즘 TurboQuant를 공개했습니다. KV 캐시는 LLM 실행 시 가장 큰 메모리 부담 중 하나로, TurboQuant는 이를 최대 6배 감소시켜 더 긴 컨텍스트 처리와 더 낮은 비용의 AI 서비스를 가능하게 합니다. 이 기술은 특히 100만 토큰 이상의 초장문 컨텍스트 추론 비용을 크게 낮출 것으로 기대됩니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Crescendo AI / ICLR 2026</span>
+          <a class="read-btn teal" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: 기업 & 산업 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon gold">🏢</div>
+      <div class="section-title-text">
+        <h2>기업 · 산업 동향</h2>
+        <p>Corporate · Industry</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">10</div>
+          <div class="card-title">Meta, AI 구조조정으로 8,000명 해고 · 7,000명은 AI 전담 팀으로 재배치</div>
+        </div>
+        <div class="card-summary">
+          Meta가 AI 중심 구조조정의 일환으로 전체 인력의 약 10%인 8,000명을 해고하고, 추가로 7,000명을 Applied AI Engineering·Agent Transformation Accelerator 등 신설 AI 전담 팀으로 재배치했습니다. 이번 감원은 중간 관리자와 소프트웨어 엔지니어 직군에 집중됐으며, 절반 이상인 4,665명은 캘리포니아·워싱턴주에서 발생했습니다. 마크 저커버그는 올해 추가 대규모 감원은 없을 것이라고 밝혔습니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Quartz / NPR</span>
+          <a class="read-btn gold" href="https://qz.com/meta-layoffs-8000-jobs-ai-restructuring-052026" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">11</div>
+          <div class="card-title">ChatGPT 점유율 54.7%로 하락 · Google Gemini 6개월 만에 104% 급성장</div>
+        </div>
+        <div class="card-summary">
+          전 세계 주요 AI 챗봇 웹 방문 점유율에서 ChatGPT가 54.7%를 기록했으나, 2025년 2월의 76.5%에서 큰 폭으로 하락했습니다. Google Gemini는 27.4%를 점유하며 불과 6개월 만에 104% 성장해 가장 빠르게 확장 중인 AI 어시스턴트로 자리잡았습니다. AI 챗봇 시장의 경쟁이 심화되면서 OpenAI의 독점적 지위가 빠르게 약화되고 있음을 보여줍니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Build Fast With AI</span>
+          <a class="read-btn" href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">12</div>
+          <div class="card-title">OpenAI, 바이오디펜스 AI 이니셔티브 'Rosalind Biodefense' 출시 — 팬데믹 대비 특화</div>
+        </div>
+        <div class="card-summary">
+          OpenAI가 바이오디펜스·공중보건·팬데믹 대비 분야 전문가를 위한 GPT-Rosalind 신뢰 접근 프로그램 'Rosalind Biodefense'를 출시했습니다. Anthropic도 거의 동시에 Claude Mythos Preview를 활용한 사이버보안 인프라 특화 'Project Glasswing'을 발표하며, AI를 활용한 국가 안보 강화 경쟁이 본격화되고 있습니다. 이는 앞서 발표된 AI CEO들의 합성 DNA 규제 촉구와 함께 AI-생명안보 연계의 중요성을 부각시킵니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">LLM Stats</span>
+          <a class="read-btn teal" href="https://llm-stats.com/llm-updates" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: 스타트업 & 투자 ── -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon teal">💰</div>
+      <div class="section-title-text">
+        <h2>스타트업 · 투자</h2>
+        <p>Startups · Funding</p>
+      </div>
+    </div>
+    <div class="card-grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="card-number">13</div>
+          <div class="card-title">Runware, AI 추론 최적화 'Sonic Inference Engine'으로 Series A 5,000만 달러 조달</div>
+        </div>
+        <div class="card-summary">
+          생성 AI 성능 최적화 스타트업 Runware가 Series A 라운드에서 5,000만 달러를 조달했습니다. 자사 핵심 기술 'Sonic Inference Engine' 확장에 투자금을 활용할 계획으로, 이 엔진은 생성 AI 추론의 속도와 비용 효율성을 획기적으로 개선합니다. 2026년 상반기 AI 스타트업 Series A 평균 투자액이 5,190만 달러에 달하는 등 AI 인프라 분야에 대한 투자자들의 관심이 집중되고 있습니다.
+        </div>
+        <div class="card-footer">
+          <span class="source-tag">Crescendo AI</span>
+          <a class="read-btn teal" href="https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups" target="_blank">원문 읽기 →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>AI Daily Reporter &nbsp;·&nbsp; <a href="https://github.com/bini5036/bini5036.github.io" target="_blank">GitHub 저장소</a> &nbsp;·&nbsp; <a href="../index.html">아카이브</a></p>
+  <p style="margin-top:6px;font-size:0.75rem;">본 리포트는 Claude AI가 자동 생성합니다. 원문은 각 기사의 '원문 읽기' 링크를 통해 확인하세요.</p>
+</footer>
+
+</body>
+</html>
